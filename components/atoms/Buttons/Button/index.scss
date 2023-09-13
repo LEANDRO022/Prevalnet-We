@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer utilities {
+    .button {
+        @apply bg-colorCyan border-colorCyan w-[8rem] rounded-md border py-2 text-center text-base text-white shadow-md;
+    }
+
+    .button__disabled {
+        @apply bg-grey/20 border-grey;
+    }
+
+    .button__secondary {
+        @apply bg-transparent text-colorCyan;
+    }
+
+    .button__container {
+        @apply flex items-center justify-center gap-x-2;
+    }
+
+    .button__project__large {
+        @apply w-[10rem] font-fontPrimaryRegular;
+    }
+}
