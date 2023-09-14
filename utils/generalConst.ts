@@ -41,8 +41,8 @@ export const itemsMenuSidebar = [
     id: 6,
     iconCategory: 'fluent',
     iconName: 'brain-circuit-20-regular',
-    title: 'Conocimientos',
-    path: '/mygrade/grade',
+    title: 'Mis Conocimientos',
+    path: '/my_grade/grade',
   },
   // {
   //   id: 2,
@@ -155,8 +155,8 @@ export const itemsMenuSidebarMobile = [
     id: 6,
     iconCategory: 'fluent',
     iconName: 'brain-circuit-20-regular',
-    title: 'Conocimientos',
-    path: '/mygrade/grade',
+    title: 'Mis Conocimientos',
+    path: '/my_grade/grade',
   },
 ];
 export const itemsMenuFooterTab = [

@@ -16,7 +16,7 @@ export default function Hitos() {
     );
     let isValid = true;
 
-    requiredInputs.forEach((input) => {
+    requiredInputs.forEach(input => {
       if (!input.value) {
         isValid = false;
       }
@@ -116,7 +116,7 @@ export default function Hitos() {
                 onChange={checkFormValidity}
               >
                 <option value=''>Seleccione una opcion</option>
-                {countries.map((country) => (
+                {countries.map(country => (
                   <option key={country.value} value={country.value}>
                     {country.label}
                   </option>
