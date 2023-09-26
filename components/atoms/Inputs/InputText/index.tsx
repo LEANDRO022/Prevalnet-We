@@ -22,13 +22,18 @@ function InputText({
   disabled,
   required,
 }: InputTextProps) {
+  const commonStyles = {
+    fontFamily: 'font-primary-regular',
+    fontWeight: 'bold',
+    fontSize: '14px',
+  };
+
   return (
     <label htmlFor={name} className='input__label'>
       <span>
         {label}
         {required && <span className='ml-1 font-bold text-colorCyan'>*</span>}
       </span>
-      {/** Cargando la entrada con valores por defecto */}
       <div>
         {defaultValue ? (
           <input
@@ -41,6 +46,7 @@ function InputText({
             autoComplete='off'
             disabled={disabled}
             required={required}
+            style={commonStyles}
           />
         ) : (
           <input
@@ -53,6 +59,7 @@ function InputText({
             disabled={disabled}
             autoComplete='off'
             required={required}
+            style={commonStyles}
           />
         )}
       </div>

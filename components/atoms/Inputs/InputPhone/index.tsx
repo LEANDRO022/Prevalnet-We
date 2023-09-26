@@ -33,7 +33,6 @@ function InputPhone({
         {label}
         {required && <span className='ml-1 font-bold text-colorCyan'>*</span>}
       </span>
-      {/** Cargando la entrada con valores por defecto */}
       <div>
         <PhoneInput
           value={value}
@@ -41,7 +40,7 @@ function InputPhone({
           placeholder={placeholder}
           onChange={onChange}
           disabled={disabled}
-          className='border-black placeholder:text-grey placeholder:font-fontPrimaryRegular font-fontPrimaryRegular font-light h-11 w-full max-w-[30rem] rounded-md border px-3 text-sm placeholder:text-[13px] focus:outline-none'
+          className='border-black font-fontPrimaryRegular font-light h-11 w-full max-w-[30rem] rounded-md border px-3 text-sm placeholder:text-[13px] focus:outline-none'
         />
       </div>
     </label>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FaSearch, FaCertificate } from 'react-icons/fa';
 
 const data = [
   {
@@ -36,8 +37,8 @@ const data = [
 function Experience() {
   const [filtro, setFiltro] = useState('');
 
-  const filteredData = data.filter((item) =>
-    item.tipo.toLowerCase().includes(filtro.toLowerCase())
+  const filteredData = data.filter(item =>
+    item.tipo.toLowerCase().includes(filtro.toLowerCase()),
   );
 
   return (
@@ -48,17 +49,20 @@ function Experience() {
       <div className='md:flex items-center'>
         <a
           href='../academy'
-          className='bg-colorCyan text-white font-bold py-2 px-4 rounded-md md:w-1/5 mr-2 hover:bg-opacity-80 transition duration-300'
+          className='bg-colorCyan text-white font-bold py-2 px-4 rounded-md md:w-1/5 mr-2 flex items-center hover:bg-opacity-80 transition duration-300'
         >
           Agregar Certificado
         </a>
-        <div className='w-full my-4'>
+        <div className='w-full my-4 relative'>
+          <span className='absolute inset-y-0 left-0 flex items-center pl-4'>
+            <FaSearch className='text-gray-400' />
+          </span>
           <input
             type='text'
-            placeholder='Filtrar por tipo...'
+            placeholder='Buscar...'
             value={filtro}
-            onChange={(e) => setFiltro(e.target.value)}
-            className='border border-gray-300 rounded-md px-4 py-2 w-full focus:outline-none focus:border-colorCyan'
+            onChange={e => setFiltro(e.target.value)}
+            className='border border-gray-300 rounded-md pl-12 py-2 w-full focus:outline-none focus:border-colorCyan'
           />
         </div>
       </div>

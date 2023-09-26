@@ -25,58 +25,63 @@ function InputSelectForm({
   isDisabled = false,
   required = false,
 }: InputSelectFormProps) {
+  const commonStyles = {
+    fontFamily: 'font-primary-regular',
+    fontWeight: 'bold',
+    fontSize: '14px',
+  };
+
   const stylesSelect = useMemo(
     () => ({
       container: (styles: any) => ({
         ...styles,
         maxWidth: '30rem',
         width: '100%',
-        fontFamily: 'font-primary-regular',
-        fontWeight: 'bold',
-        // fontSize: '20px',
+        ...commonStyles,
       }),
       control: (styles: any) => ({
         ...styles,
         boxShadow: 'none',
         borderRadius: '.4rem',
-        borderWidth: '1px',
         borderColor: '#27394F',
-        height: '2.6rem',
-        '&:hover': {}, // Establecer estilos vacíos para el hover
-        '&:focus': {}, // Establecer estilos vacíos para el focus
+        height: '2.8rem',
+        '&:hover': {},
+        '&:focus': {},
+        ...commonStyles,
       }),
       menuList: (styles: any) => ({
         ...styles,
         color: '#131313',
-        fontFamily: 'font-primary-regular',
-        fontSize: '14px',
+        ...commonStyles,
       }),
       placeholder: (styles: any) => ({
         ...styles,
         color: '#667080',
-        fontSize: '14px',
+        ...commonStyles,
       }),
-      // Color de icon
       dropdownIndicator: (styles: any) => ({
         ...styles,
         color: '#131313',
+        ...commonStyles,
       }),
       indicatorSeparator: (styles: any) => ({ ...styles, display: 'none' }),
       menuPortal: (base: any) => ({ ...base, zIndex: 9999999 }),
     }),
     []
   );
+
   const themeSelect = (theme: any) => ({
     ...theme,
     colors: {
       ...theme.colors,
-      primary25: '#9E9EA2', // hover a items de la lista --- ANTERIOR:#26B693
-      primary: '#00A2DF', // Background de items list seleccionado --- ANTERIOR:#9E9EA2
-      primary50: '#C4C4C4', // Background de items al hacer clik --- ANTERIOR:#C4C4C4
+      primary25: '#9E9EA2',
+      primary: '#00A2DF',
+      primary50: '#C4C4C4',
       danger: '#FF3636',
       dangerLight: '#FBFCFC',
     },
   });
+
   return (
     <div className='text-sm space-y-1 font-fontPrimaryRegular font-bold'>
       <span className='font-fontPrimaryRegular font-bold text-sm'>

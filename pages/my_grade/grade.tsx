@@ -6,6 +6,11 @@ import { Icon } from '@iconify/react';
 export default function MyGrade() {
   const [mostrarTablaBackend, setMostrarTablaBackend] = useState(false);
   const [mostrarTablaFrontend, setMostrarTablaFrontend] = useState(false);
+  const [
+    mostrarTablaHabilidadesBlandas,
+    setMostrarTablaHabilidadesBlandas,
+  ] = useState(false);
+  const [mostrarTablaDevOps, setMostrarTablaDevOps] = useState(false);
 
   const toggleMostrarTablaBackend = () => {
     setMostrarTablaBackend(!mostrarTablaBackend);
@@ -13,6 +18,14 @@ export default function MyGrade() {
 
   const toggleMostrarTablaFrontend = () => {
     setMostrarTablaFrontend(!mostrarTablaFrontend);
+  };
+
+  const toggleMostrarTablaHabilidadesBlandas = () => {
+    setMostrarTablaHabilidadesBlandas(!mostrarTablaHabilidadesBlandas);
+  };
+
+  const toggleMostrarTablaDevOps = () => {
+    setMostrarTablaDevOps(!mostrarTablaDevOps);
   };
 
   const [backendGrades, setBackendGrades] = useState({
@@ -31,6 +44,22 @@ export default function MyGrade() {
     REACT: 0.0,
   });
 
+  const [habilidadesBlandas, setHabilidadesBlandas] = useState({
+    Comunicación: 0.0,
+    Colaboración: 0.0,
+    Resolución: 0.0,
+    Adaptabilidad: 0.0,
+    Creatividad: 0.0,
+  });
+
+  const [devOpsGrades, setDevOpsGrades] = useState({
+    Docker: 0.0,
+    Kubernetes: 0.0,
+    Jenkins: 0.0,
+    Git: 0.0,
+    'CI/CD': 0.0,
+  });
+
   const renderGrades = (grades, setGrades) => (
     <form className='grid gap-5 mt-4'>
       <div>
@@ -44,8 +73,33 @@ export default function MyGrade() {
               name={subject}
               value={grade}
               onChange={(event, newValue) => {
-                // Actualiza el estado local con la nueva calificación
                 setGrades({ ...grades, [subject]: newValue });
+              }}
+              precision={0.1}
+              className='ml-auto'
+            />
+          </div>
+        ))}
+      </div>
+    </form>
+  );
+
+  const renderHabilidadesBlandas = (grades, setGrades) => (
+    <form className='grid gap-5 mt-4'>
+      <div>
+        <span className='text-gray-400'>
+          Calificaciones de Habilidades Blandas
+        </span>
+      </div>
+      <div className='grid gap-2'>
+        {Object.entries(grades).map(([skill, grade]) => (
+          <div key={skill} className='flex items-center'>
+            <span className='pr-2'>{skill}</span>
+            <Rating
+              name={skill}
+              value={grade}
+              onChange={(event, newValue) => {
+                setGrades({ ...grades, [skill]: newValue });
               }}
               precision={0.1}
               className='ml-auto'
@@ -78,11 +132,11 @@ export default function MyGrade() {
               <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 mt-5'>
                 <div
                   className={`bg-white p-4 rounded-lg ${
-                    mostrarTablaBackend ? 'shadow-md' : ''
+                    mostrarTablaBackend ? '' : ''
                   }`}
                 >
                   <div
-                    className='flex cursor-pointer'
+                    className='flex cursor-pointer justify-between shadow-md p-3'
                     onClick={toggleMostrarTablaBackend}
                   >
                     <span className='pr-2'>Backend</span>
@@ -104,7 +158,7 @@ export default function MyGrade() {
                   }`}
                 >
                   <div
-                    className='flex cursor-pointer'
+                    className='flex cursor-pointer justify-between shadow-md p-3'
                     onClick={toggleMostrarTablaFrontend}
                   >
                     <span className='pr-2'>Frontend</span>
@@ -118,6 +172,56 @@ export default function MyGrade() {
 
                   {mostrarTablaFrontend &&
                     renderGrades(frontendGrades, setFrontendGrades)}
+                </div>
+              </div>
+              <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 mt-5'>
+                <div
+                  className={`bg-white p-4 rounded-lg ${
+                    mostrarTablaHabilidadesBlandas ? 'shadow-md' : ''
+                  }`}
+                >
+                  <div
+                    className='flex cursor-pointer justify-between shadow-md p-3'
+                    onClick={toggleMostrarTablaHabilidadesBlandas}
+                  >
+                    <span className='pr-2'>Habilidades Blandas</span>
+                    <Icon
+                      icon={
+                        mostrarTablaHabilidadesBlandas
+                          ? 'fe:arrow-down'
+                          : 'fe:arrow-up'
+                      }
+                      className='text-gray-500'
+                    />
+                  </div>
+
+                  {mostrarTablaHabilidadesBlandas &&
+                    renderHabilidadesBlandas(
+                      habilidadesBlandas,
+                      setHabilidadesBlandas
+                    )}
+                </div>
+
+                <div
+                  className={`bg-white p-4 rounded-lg ${
+                    mostrarTablaDevOps ? 'shadow-md' : ''
+                  }`}
+                >
+                  <div
+                    className='flex cursor-pointer justify-between shadow-md p-3'
+                    onClick={toggleMostrarTablaDevOps}
+                  >
+                    <span className='pr-2'>DevOps</span>
+                    <Icon
+                      icon={
+                        mostrarTablaDevOps ? 'fe:arrow-down' : 'fe:arrow-up'
+                      }
+                      className='text-gray-500'
+                    />
+                  </div>
+
+                  {mostrarTablaDevOps &&
+                    renderGrades(devOpsGrades, setDevOpsGrades)}
                 </div>
               </div>
             </div>

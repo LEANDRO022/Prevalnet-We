@@ -21,25 +21,32 @@ function InputDate({
   isDisabled = false,
   required = false,
 }: InputDateProps) {
+  const commonStyles = {
+    fontFamily: 'font-primary-regular',
+    fontWeight: 'bold',
+    fontSize: '14px',
+  };
+
   return (
-    <div className="input__container">
-      <label htmlFor={name} className="input__label">
-        <span className="input__label-text">
+    <div className='text-sm space-y-1 font-fontPrimaryRegular font-bold'>
+      <label htmlFor={name} className='input__label'>
+        <span className='font-fontPrimaryRegular font-bold text-sm'>
           {label}
-          {required && <span className="ml-1 font-bold text-colorCyan">*</span>}
+          {required && <span className='ml-1 font-bold text-colorCyan'>*</span>}
         </span>
 
-        <div className="relative">
+        <div className='relative'>
           <input
-            type="date"
+            type='date'
             value={formatDate(selectedDate)}
-            onChange={(event) => {
+            onChange={event => {
               const selectedDate = event.target.value;
               onChange(selectedDate ? new Date(selectedDate) : null);
             }}
             className={`input ${isDisabled ? 'input_disabled' : ''}`}
             disabled={isDisabled}
             required={required}
+            style={commonStyles}
           />
         </div>
       </label>

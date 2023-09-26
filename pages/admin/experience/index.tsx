@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FaSearch } from 'react-icons/fa';
 
 const data = [
   {
@@ -135,7 +136,7 @@ function CertificateTable({ rowData }) {
 function Experience() {
   const [expandedRowIndex, setExpandedRowIndex] = useState(null);
 
-  const handleRowClick = (index) => {
+  const handleRowClick = index => {
     if (data[index].certificates.length > 0) {
       setExpandedRowIndex(index === expandedRowIndex ? null : index);
     }
@@ -143,7 +144,7 @@ function Experience() {
 
   const [filtro, setFiltro] = useState('');
 
-  const filteredData = data.filter((item) =>
+  const filteredData = data.filter(item =>
     item.firstName.toLowerCase().includes(filtro.toLowerCase())
   );
 
@@ -152,13 +153,16 @@ function Experience() {
       <p className='text-gray-500 lg:text-3xl font-semibold pb-3'>
         Usuarios con certificados
       </p>
-      <div className='w-full my-4'>
+      <div className='w-full my-4 relative'>
+        <span className='absolute inset-y-0 left-0 flex items-center pl-4'>
+          <FaSearch className='text-gray-400' />
+        </span>
         <input
           type='text'
-          placeholder='Filtrar por nombre...'
+          placeholder='Buscar...'
           value={filtro}
-          onChange={(e) => setFiltro(e.target.value)}
-          className='border border-gray-300 rounded-md px-4 py-2 w-full focus:outline-none focus:border-colorCyan'
+          onChange={e => setFiltro(e.target.value)}
+          className='border border-gray-300 rounded-md pl-12 py-2 w-full focus:outline-none focus:border-colorCyan'
         />
       </div>
       <div className='shadow-lg'>
