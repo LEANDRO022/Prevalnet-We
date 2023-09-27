@@ -97,9 +97,9 @@ export default function working_information() {
             <div className="lg:bg-blue-500 lg:p-3 lg:text-white lg:shadow-md lg:rounded-lg lg:mx-auto lg:mt-5 ">
                 <ul className="lg:flex lg:space-x-10 grid hidden">
                     <li><a href="#">Informacion laboral</a></li>
-                    <li><a href="#">Informacion Personal</a></li>
+                    <li><a href="./../account">Informacion Personal</a></li>
                     <li><a href="#">Educacion</a></li>
-                    <li><a href="#">Familiar</a></li>
+                    <li><a href="./../family">Familiar</a></li>
                     <li><a href="#">Condicion de salud</a></li>
                     <li><a href="#">Solicitudes</a></li>
                 </ul>
