@@ -93,6 +93,14 @@ export default function Family() {
                   required
                 />
                 <div className='mb-2'>
+                  <label className='block text-gray-700 text-sm font-bold'>
+                    Vive con usted
+                  </label>
+                  <input
+                    type='checkbox'
+                    name={`livesWithYou_${index}`}
+                    className='form-checkbox h-5 w-5 text-blue-600'
+                  />
                   {index > 0 && (
                     <Button
                       type='button'
