@@ -6,6 +6,7 @@ import InputSelectForm from '@components/atoms/Inputs/InputSelectForm';
 import InputText from '@components/atoms/Inputs/InputText';
 import InputDate from '@components/atoms/Inputs/InputDate';
 import InputPhone from '@components/atoms/Inputs/InputPhone';
+import InputNumber from '@components/atoms/Inputs/InputNumber';
 import {
   DEFAULT_PROFILE_IMAGE,
   documentTypeOptions,
@@ -20,6 +21,7 @@ export default function Account() {
   const [email, setEmail] = useState('slondono@prevalentware.com');
   const [birthday, setBirthday] = useState(null);
   const [gender, setGender] = useState('');
+  const [expeditionDate, setExpeditionDate] = useState(null);
   const [documentType, setDocumentType] = useState('');
   const [documentNumber, setDocumentNumber] = useState('1023625799');
   const [updatedName, setUpdatedName] = useState(name);
@@ -32,26 +34,26 @@ export default function Account() {
   );
   const [isFormValid, setIsFormValid] = useState(false);
   const [showAgeAlert, setShowAgeAlert] = useState(false);
-  const [calculatedAge, setCalculatedAge] = useState('');
+  // const [calculatedAge, setCalculatedAge] = useState('');
 
-  const calculateAge = birthDate => {
-    if (!birthDate) {
-      return '';
-    }
+  // const calculateAge = birthDate => {
+  //   if (!birthDate) {
+  //     return '';
+  //   }
 
-    const today = new Date();
-    const birth = new Date(birthDate);
+  //   const today = new Date();
+  //   const birth = new Date(birthDate);
 
-    const yearsDiff = today.getFullYear() - birth.getFullYear();
-    const isBeforeBirthday =
-      today.getMonth() < birth.getMonth() ||
-      (today.getMonth() === birth.getMonth() &&
-        today.getDate() < birth.getDate());
+  //   const yearsDiff = today.getFullYear() - birth.getFullYear();
+  //   const isBeforeBirthday =
+  //     today.getMonth() < birth.getMonth() ||
+  //     (today.getMonth() === birth.getMonth() &&
+  //       today.getDate() < birth.getDate());
 
-    const newCalculatedAge = isBeforeBirthday ? yearsDiff - 1 : yearsDiff;
+  //   const newCalculatedAge = isBeforeBirthday ? yearsDiff - 1 : yearsDiff;
 
-    return newCalculatedAge;
-  };
+  //   return newCalculatedAge;
+  // };
 
   const handleImageChange = e => {
     const selectedFile = e.target.files[0];
@@ -77,14 +79,14 @@ export default function Account() {
       setDocumentNumber(updatedDocumentNumber);
       setBirthday(updatedBirthday);
 
-      const newAge = calculateAge(updatedBirthday);
-      if (typeof newAge === 'number') {
-        setShowAgeAlert(newAge <= 10);
-        setCalculatedAge(newAge.toString());
-      } else {
-        setShowAgeAlert(false);
-        setCalculatedAge('');
-      }
+      // const newAge = calculateAge(updatedBirthday);
+      // if (typeof newAge === 'number') {
+      //   setShowAgeAlert(newAge <= 10);
+      //   setCalculatedAge(newAge.toString());
+      // } else {
+      //   setShowAgeAlert(false);
+      //   setCalculatedAge('');
+      // }
     }
   };
 
@@ -99,14 +101,14 @@ export default function Account() {
 
     setIsFormValid(formIsValid);
 
-    const newAge = calculateAge(updatedBirthday);
+    // const newAge = calculateAge(updatedBirthday);
 
-    if (typeof newAge === 'number' && newAge < 10) {
-      setShowAgeAlert(true);
-      setIsFormValid(false);
-    } else {
-      setShowAgeAlert(false);
-    }
+    // if (typeof newAge === 'number' && newAge < 10) {
+    //   setShowAgeAlert(true);
+    //   setIsFormValid(false);
+    // } else {
+    //   setShowAgeAlert(false);
+    // }
   }, [
     updatedName,
     updatedEmail,
@@ -122,10 +124,10 @@ export default function Account() {
         <title>Mi Cuenta</title>
         <link rel='icon' href='/img/Favicon.png' />
       </Head>
-      <div className='container mx-auto mt-8 p-8  max-w-screen-lg bg-white rounded-lg shadow-md'>
-        <div className='text-gray-700 text-3xl font-semibold text-center mb-5'>
+      <div className='container mx-auto mt-8 p-8  max-w-screen-lg  rounded-lg shadow-md'>
+        {/* <div className='text-gray-700 text-3xl font-semibold text-center mb-5'>
           Mi Cuenta
-        </div>
+        </div> */}
         <div>
           <div className='relative w-40 h-40 md:w-60 md:h-60 mx-auto mb-4'>
             <div className='rounded-full overflow-hidden w-full h-full border-4 border-white shadow-lg'>
@@ -170,7 +172,8 @@ export default function Account() {
           <div className='mb-10 flex flex-wrap justify-center space-x-4 space-y-2 md:space-y-0 md:space-x-2'>
             {sections.map((section, index) => (
               <button
-                key={index}
+                key={section}
+                type='button'
                 className={`focus:outline-none px-4 py-2 md:text-lg font-semibold rounded-lg transition duration-300 ease-in-out ${
                   currentSection === index + 1
                     ? 'bg-colorCyan text-white'
@@ -193,15 +196,15 @@ export default function Account() {
                   onChange={e => setUpdatedName(e.target.value)}
                   required
                 />
-                <InputSelectForm
-                  text='Sexo'
-                  opts={genderOptions}
-                  value={{ value: updatedGender, label: updatedGender }}
-                  onChange={selectedOption =>
-                    setUpdatedGender(selectedOption.value)
-                  }
+                <InputText
+                  label='Correo Electrónico'
+                  name='newEmail'
+                  value={updatedEmail}
+                  onChange={e => setUpdatedEmail(e.target.value)}
                   required
                 />
+                <InputPhone label='Telefono' name='' />
+                <InputPhone label='Celular' name='' />
                 <InputDate
                   label='Fecha de Nacimiento'
                   selectedDate={updatedBirthday}
@@ -220,30 +223,41 @@ export default function Account() {
                   }
                   required
                 />
-                <InputText
+                <InputNumber
                   label='Número de Documento'
                   name='newDocumentNumber'
                   value={updatedDocumentNumber}
                   onChange={e => setUpdatedDocumentNumber(e.target.value)}
                   required
                 />
-                <InputDate label='Fecha de Expedición' required />
+                <InputDate
+                  label='Fecha de Expedicion'
+                  selectedDate={expeditionDate}
+                  onChange={date => setExpeditionDate(date)}
+                  required
+                />
                 <InputText label='Lugar de Expedición' name='' required />
+                <InputSelectForm text='País de Nacimiento' required opts={[]} />
+                <InputSelectForm
+                  text='Departamento de Nacimiento'
+                  required
+                  opts={[]}
+                />
                 <InputSelectForm
                   text='Municipio de Nacimiento'
                   required
                   opts={[]}
                 />
                 <InputSelectForm
-                  text='Departamento de Nacimiento'
-                  required
-                  opts={[]}
+                  text='Sexo'
+                  opts={genderOptions}
+                  value={{ value: updatedGender, label: updatedGender }}
+                  onChange={selectedOption =>
+                    setUpdatedGender(selectedOption.value)
+                  }
                 />
-                <InputSelectForm text='País de Nacimiento' required opts={[]} />
-                <InputSelectForm text='Estado Civil' required opts={[]} />
-                <InputSelectForm text='Raza' required opts={[]} />
-                <InputPhone label='Telefono' name='' required />
-                <InputPhone label='Celular' name='' required />
+                <InputSelectForm text='Estado Civil' opts={[]} />
+                <InputSelectForm text='Raza' opts={[]} />
               </div>
             </div>
           )}
