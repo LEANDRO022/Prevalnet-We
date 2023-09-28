@@ -36,8 +36,8 @@ export default function working_information() {
                     <button
                         onClick={() => setIsOpen(!isOpen)}
                         type="button"
-                        className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-blue-500 text-sm font-medium text-white hover:bg-blue-400 hover:text-white hover:border-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"                    >
-                        Selecciona una opción
+                        className="inline-flex justify-center w-full rounded-md border shadow-sm px-4 py-2 bg-blue-500 text-sm font-medium text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100"                    >
+                         <span className="mt-2">Informacion laboral</span>
                         <svg
                             className={`-mr-1 ml-2 h-8 w-5 transform ${isOpen ? 'rotate-180' : 'rotate-0'}`}
                             xmlns="http://www.w3.org/2000/svg"
@@ -53,41 +53,36 @@ export default function working_information() {
                 {isOpen && (
                     <div className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
                         <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="dropdown-button">
-                            <button
-                                onClick={() => handleOptionClick('/pagina1')}
-                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-500 hover:text-white"
-                            >
-                                Opción 1
-                            </button>
+                            
                             <button
                                 onClick={() => handleOptionClick('/pagina2')}
                                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-500 hover:text-white"
                             >
-                                Opción 2
+                               Informacion personal
                             </button>
                             <button
                                 onClick={() => handleOptionClick('/pagina3')}
                                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-500 hover:text-white"
                             >
-                                Opción 3
+                                Educacion
                             </button>
                             <button
-                                onClick={() => handleOptionClick('/pagina4')}
+                                onClick={() => handleOptionClick('../family')}
                                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-500 hover:text-white"
                             >
-                                Opción 4
+                                Familiar
                             </button>
                             <button
                                 onClick={() => handleOptionClick('/pagina5')}
                                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-500 hover:text-white"
                             >
-                                Opción 5
+                                Condiciones de salud
                             </button>
                             <button
                                 onClick={() => handleOptionClick('/pagina6')}
                                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-500 hover:text-white"
                             >
-                                Opción 6
+                                Solicitudes
                             </button>
                         </div>
                     </div>

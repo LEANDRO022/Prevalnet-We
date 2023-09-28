@@ -41,7 +41,7 @@ export default function Hitos() {
         <h1 className='text-3xl text-gray-400'>HITOS LABORALES</h1>
       </div>
 
-      <div className='mt-10 font-bold'>
+      <div className='mt-10 font-bold bg-white rounded-lg shadow-md p-5 ml-5 mr-5 '>
         <form action='' className='grid md:grid-cols-2 gap-4'>
           <div className='col-span-1'>
             <span className='text-3xl text-gray-400'>Que?</span>
