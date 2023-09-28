@@ -37,7 +37,7 @@ export default function working_information() {
                         onClick={() => setIsOpen(!isOpen)}
                         type="button"
                         className="inline-flex justify-center w-full rounded-md border shadow-sm px-4 py-2 bg-blue-500 text-sm font-medium text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100"                    >
-                         <span className="mt-2">Informacion laboral</span>
+                        <span className="mt-2">Informacion laboral</span>
                         <svg
                             className={`-mr-1 ml-2 h-8 w-5 transform ${isOpen ? 'rotate-180' : 'rotate-0'}`}
                             xmlns="http://www.w3.org/2000/svg"
@@ -53,15 +53,20 @@ export default function working_information() {
                 {isOpen && (
                     <div className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
                         <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="dropdown-button">
-                            
                             <button
-                                onClick={() => handleOptionClick('/pagina2')}
+                                onClick={() => handleOptionClick('../eyelashes/working_information')}
                                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-500 hover:text-white"
                             >
-                               Informacion personal
+                                Informacion Laboral
                             </button>
                             <button
-                                onClick={() => handleOptionClick('/pagina3')}
+                                onClick={() => handleOptionClick('../account')}
+                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-500 hover:text-white"
+                            >
+                                Informacion personal
+                            </button>
+                            <button
+                                onClick={() => handleOptionClick('../education/education')}
                                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-500 hover:text-white"
                             >
                                 Educacion
@@ -90,11 +95,11 @@ export default function working_information() {
             </div>
 
             <div className="lg:bg-blue-500 lg:p-3 lg:text-white lg:shadow-md lg:rounded-lg lg:mx-auto lg:mt-5 ">
-                <ul className="lg:flex lg:space-x-10 grid hidden">
-                    <li><a href="#">Informacion laboral</a></li>
-                    <li><a href="#">Informacion Personal</a></li>
-                    <li><a href="#">Educacion</a></li>
-                    <li><a href="#">Familiar</a></li>
+                <ul className="lg:flex lg:space-x-10 grid hidden font-normal">
+                    <li><a href="../eyelashes/working_information" className='font-bold underline'>Informacion laboral</a></li>
+                    <li><a href="../account">Informacion Personal</a></li>
+                    <li><a href="../education/education" >Educacion</a></li>
+                    <li><a href="../family">Familiar</a></li>
                     <li><a href="#">Condicion de salud</a></li>
                     <li><a href="#">Solicitudes</a></li>
                 </ul>
@@ -175,7 +180,7 @@ export default function working_information() {
                             <div>
                                 <label htmlFor="maquinasHerramientas">Maquinas y herramientas</label>
                                 <div className="flex space-x-2">
-                                    <span>Si</span><input type="radio" id="Si" name="" value="Si"  onClick={toggleMaquinasHerramientas} />
+                                    <span>Si</span><input type="radio" id="Si" name="" value="Si" onClick={toggleMaquinasHerramientas} />
                                     <span>No</span><input type="radio" id="No" name="" value="No" />
                                 </div>
                             </div>
