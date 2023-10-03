@@ -16,7 +16,7 @@ interface InputSelectFormProps {
 
 function InputSelectForm({
   text,
-  placeholder,
+  placeholder = 'Seleccionar...',
   value = null,
   opts = [],
   onChange = () => {},

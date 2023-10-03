@@ -95,11 +95,19 @@ export default function working_information() {
             </div>
 
             <div className="lg:bg-blue-500 lg:p-3 lg:text-white lg:shadow-md lg:rounded-lg lg:mx-auto lg:mt-5 ">
+<<<<<<< HEAD
                 <ul className="lg:flex lg:space-x-10 grid hidden font-normal">
                     <li><a href="../eyelashes/working_information" className='font-bold underline'>Informacion laboral</a></li>
                     <li><a href="../account">Informacion Personal</a></li>
                     <li><a href="../education/education" >Educacion</a></li>
                     <li><a href="../family">Familiar</a></li>
+=======
+                <ul className="lg:flex lg:space-x-10 grid hidden">
+                    <li><a href="#">Informacion laboral</a></li>
+                    <li><a href="./../account">Informacion Personal</a></li>
+                    <li><a href="#">Educacion</a></li>
+                    <li><a href="./../family">Familiar</a></li>
+>>>>>>> 93d1135a6ff1ba670bdfb202f83234c7108f7284
                     <li><a href="#">Condicion de salud</a></li>
                     <li><a href="#">Solicitudes</a></li>
                 </ul>

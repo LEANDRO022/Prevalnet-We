@@ -3,9 +3,9 @@ import React from 'react';
 // Props tipadas del componente
 interface InputCheckBoxProps {
   label: string;
-  name: string;
+  name?: string;
   extraClassNames?: string;
-  isChecked?: boolean;
+  isChecked: boolean;
   setIsChecked?: React.Dispatch<React.SetStateAction<boolean>>;
   onChange?: any;
   disabled?: boolean;
