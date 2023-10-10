@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-
 export default function working_information() {
     const [mostrarElementosProteccion, setMostrarElementosProteccion] = useState(false);
     const [mostrarMaquinasHerramientas, setMostrarMaquinasHerramientas] = useState(false);
@@ -24,7 +23,7 @@ export default function working_information() {
     };
     return (
         <div className="grid justify-center font-bold">
-            <div>
+            <div>   
                 <Head>
                     <title>Informacion Laboral</title>
                     <link rel='icon' href='/public/img/icons/favicon.ico' />
@@ -95,25 +94,17 @@ export default function working_information() {
             </div>
 
             <div className="lg:bg-blue-500 lg:p-3 lg:text-white lg:shadow-md lg:rounded-lg lg:mx-auto lg:mt-5 ">
-<<<<<<< HEAD
                 <ul className="lg:flex lg:space-x-10 grid hidden font-normal">
                     <li><a href="../eyelashes/working_information" className='font-bold underline'>Informacion laboral</a></li>
                     <li><a href="../account">Informacion Personal</a></li>
                     <li><a href="../education/education" >Educacion</a></li>
                     <li><a href="../family">Familiar</a></li>
-=======
-                <ul className="lg:flex lg:space-x-10 grid hidden">
-                    <li><a href="#">Informacion laboral</a></li>
-                    <li><a href="./../account">Informacion Personal</a></li>
-                    <li><a href="#">Educacion</a></li>
-                    <li><a href="./../family">Familiar</a></li>
->>>>>>> 93d1135a6ff1ba670bdfb202f83234c7108f7284
                     <li><a href="#">Condicion de salud</a></li>
                     <li><a href="#">Solicitudes</a></li>
                 </ul>
             </div>
 
-            <div className="bg-white rounded-lg shadow-md mt-10 p-5 ml-5 mr-5 "> {/* Added padding */}
+            <div className="bg-white rounded-lg shadow-md mt-10 p-5 ml-5 mr-5 "> 
                 <span className="text-3xl font-bold text-gray-500">Informacion Laboral</span>
 
                 <div className="mt-5">
@@ -160,24 +151,24 @@ export default function working_information() {
                             <div>
                                 <label>Auxilio de alquiler computador personal para el trabajo <span className=' text-blue-500 '>*</span>{' '}</label>
                                 <div className="flex space-x-2">
-                                    <span>Si</span><input type="radio" id="Si" name="" value="Si" />
-                                    <span>No</span><input type="radio" id="No" name="" value="No" />
+                                    <span>Si</span><input type="radio" id="Si" name="alqPc" value="Si" />
+                                    <span>No</span><input type="radio" id="No" name="alqPc" value="No" />
                                 </div>
                             </div>
                             <hr className="lg:hidden" />
                             <div>
                                 <label>Auxilio de conectividad <span className=' text-blue-500 '>*</span>{' '}</label>
                                 <div className="flex space-x-2">
-                                    <span>Si</span><input type="radio" id="Si" name="" value="Si" />
-                                    <span>No</span><input type="radio" id="No" name="" value="No" />
+                                    <span>Si</span><input type="radio" id="Si" name="auxilioCo" value="Si" />
+                                    <span>No</span><input type="radio" id="No" name="auxilioCo" value="No" />
                                 </div>
                             </div>
                             <div>
                                 <label htmlFor="">Afiliacion a poliza de salud corporativa <span className=' text-blue-500 '>*</span>{' '}</label>
                                 <div className="flex space-x-2">
-                                    <span>Si</span><input type="radio" id="Si" name="" value="Si" />
-                                    <span>No</span><input type="radio" id="No" name="" value="No" />
-                                    <span>Na</span><input type="radio" id="Na" name="" value="Na" />
+                                    <span>Si</span><input type="radio" id="Si" name="afisalud" value="Si" />
+                                    <span>No</span><input type="radio" id="No" name="afisalud" value="No" />
+                                    <span>Na</span><input type="radio" id="Na" name="afisalud" value="Na" />
                                 </div>
                             </div>
 
@@ -188,8 +179,8 @@ export default function working_information() {
                             <div>
                                 <label htmlFor="maquinasHerramientas">Maquinas y herramientas</label>
                                 <div className="flex space-x-2">
-                                    <span>Si</span><input type="radio" id="Si" name="" value="Si" onClick={toggleMaquinasHerramientas} />
-                                    <span>No</span><input type="radio" id="No" name="" value="No" />
+                                    <span>Si</span><input type="radio" id="Si" name="Maquinas" value="Si" onClick={toggleMaquinasHerramientas} />
+                                    <span>No</span><input type="radio" id="No" name="Maquinas" value="No" />
                                 </div>
                             </div>
                             <div>
@@ -222,8 +213,8 @@ export default function working_information() {
                             <div>
                                 <label htmlFor="epp">Elementos de protección personal</label>
                                 <div className="flex space-x-2">
-                                    <span>Si</span><input type="radio" id="Si" name="" value="Si" onClick={toggleElementosProteccion} />
-                                    <span>No</span><input type="radio" id="No" name="" value="No" />
+                                    <span>Si</span><input type="radio" id="Si" name="elementosPp" value="Si" onClick={toggleElementosProteccion} />
+                                    <span>No</span><input type="radio" id="No" name="elementosPp" value="No" />
                                 </div>
                             </div>
                             {mostrarElementosProteccion && (

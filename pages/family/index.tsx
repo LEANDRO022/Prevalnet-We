@@ -6,12 +6,8 @@ import Head from 'next/head';
 import Button from '@components/atoms/Buttons/Button';
 import InputNumber from '@components/atoms/Inputs/InputNumber';
 
-<<<<<<< HEAD
 import { useRouter } from 'next/router';
 export const personasCargo = [
-=======
-export const numPersonasCargo = [
->>>>>>> 93d1135a6ff1ba670bdfb202f83234c7108f7284
   { value: '1', label: '1' },
   { value: '2', label: '2' },
 ];

@@ -32,11 +32,11 @@ export default function Hitos() {
         <link rel='icon' href='/public/img/icons/favicon.ico' />
       </Head>
 
+
+      <div className='mt-10 lg:mr font-bold bg-white rounded-lg shadow-md p-5 ml-5 mr-5'>
       <div className='grid justify-center mt-5'>
         <h1 className='text-3xl text-gray-400'>HITOS PERSONALES</h1>
       </div>
-
-      <div className='mt-10 lg:mr font-bold'>
         <form action='' className='grid md:grid-cols-2 gap-4'>
           <div className='col-span-1 ml-10 grid'>
             <span className='text-3xl text-gray-400'>Que?</span>
@@ -47,7 +47,7 @@ export default function Hitos() {
               </label>
               <input
                 type='text'
-                className=' w-11/12 p-2 border-2 border-gray-600 rounded focus:outline-none focus:border-blue-500 lg:w-full'
+                className=' w-11/12 p-2 border border-gray-600 rounded focus:outline-none focus:border-blue-500 lg:w-full'
                 placeholder='Ej. Nacimiento de tu hijo, Distinción laboral, Premio académico'
                 required
                 onChange={checkFormValidity}
@@ -61,7 +61,7 @@ export default function Hitos() {
               <select
                 name=''
                 id=''
-                className='w-11/12 p-2 border-2 border-black rounded focus:outline-none focus:border-blue-500 lg:w-full'
+                className='w-11/12 p-2 border border-black rounded focus:outline-none focus:border-blue-500 lg:w-full'
                 required
                 onChange={checkFormValidity}
               >
@@ -82,7 +82,7 @@ export default function Hitos() {
                 id=''
                 cols='30'
                 rows='5'
-                className='w-11/12 p-2 border-2 border-black rounded focus:outline-none focus:border-blue-500 lg:w-full'
+                className='w-11/12 p-2 border border-black rounded focus:outline-none focus:border-blue-500 lg:w-full'
               ></textarea>
             </div>
           </div>
@@ -96,7 +96,7 @@ export default function Hitos() {
               </label>
               <input
                 type='date'
-                className='w-11/12 p-2 border-2 border-black rounded focus:outline-none focus:border-blue-500 lg:w-full'
+                className='w-11/12 p-2 border border-black rounded focus:outline-none focus:border-blue-500 lg:w-full'
                 required
                 onChange={checkFormValidity}
               />
@@ -111,7 +111,7 @@ export default function Hitos() {
               <select
                 name=''
                 id=''
-                className='w-11/12 p-2 border-2 border-black rounded focus:outline-none focus:border-blue-500 lg:w-full'
+                className='w-11/12 p-2 border border-black rounded focus:outline-none focus:border-blue-500 lg:w-full'
                 required
                 onChange={checkFormValidity}
               >
@@ -130,7 +130,7 @@ export default function Hitos() {
               </label>
               <input
                 type='text'
-                className='w-11/12 p-2 border-2 border-black rounded focus:outline-none focus:border-blue-500 lg:w-full'
+                className='w-11/12 p-2 border border-black rounded focus:outline-none focus:border-blue-500 lg:w-full'
                 placeholder='Ej. Florida, Texas...'
                 required
                 onChange={checkFormValidity}
@@ -142,7 +142,7 @@ export default function Hitos() {
               </label>
               <input
                 type='text'
-                className='w-11/12 p-2 border-2 border-black rounded focus:outline-none focus:border-blue-500 lg:w-full'
+                className='w-11/12 p-2 border border-black rounded focus:outline-none focus:border-blue-500 lg:w-full'
                 placeholder='Ej. Miami, Austin...'
                 required
                 onChange={checkFormValidity}
