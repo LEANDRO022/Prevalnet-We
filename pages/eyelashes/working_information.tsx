@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-
 export default function working_information() {
     const [mostrarElementosProteccion, setMostrarElementosProteccion] = useState(false);
     const [mostrarMaquinasHerramientas, setMostrarMaquinasHerramientas] = useState(false);
@@ -24,7 +23,7 @@ export default function working_information() {
     };
     return (
         <div className="grid justify-center font-bold">
-            <div>
+            <div>   
                 <Head>
                     <title>Informacion Laboral</title>
                     <link rel='icon' href='/public/img/icons/favicon.ico' />
@@ -36,8 +35,8 @@ export default function working_information() {
                     <button
                         onClick={() => setIsOpen(!isOpen)}
                         type="button"
-                        className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-blue-500 text-sm font-medium text-white hover:bg-blue-400 hover:text-white hover:border-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"                    >
-                        Selecciona una opción
+                        className="inline-flex justify-center w-full rounded-md border shadow-sm px-4 py-2 bg-blue-500 text-sm font-medium text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100"                    >
+                        <span className="mt-2">Informacion laboral</span>
                         <svg
                             className={`-mr-1 ml-2 h-8 w-5 transform ${isOpen ? 'rotate-180' : 'rotate-0'}`}
                             xmlns="http://www.w3.org/2000/svg"
@@ -54,40 +53,40 @@ export default function working_information() {
                     <div className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
                         <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="dropdown-button">
                             <button
-                                onClick={() => handleOptionClick('/pagina1')}
+                                onClick={() => handleOptionClick('../eyelashes/working_information')}
                                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-500 hover:text-white"
                             >
-                                Opción 1
+                                Informacion Laboral
                             </button>
                             <button
-                                onClick={() => handleOptionClick('/pagina2')}
+                                onClick={() => handleOptionClick('../account')}
                                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-500 hover:text-white"
                             >
-                                Opción 2
+                                Informacion personal
                             </button>
                             <button
-                                onClick={() => handleOptionClick('/pagina3')}
+                                onClick={() => handleOptionClick('../education/education')}
                                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-500 hover:text-white"
                             >
-                                Opción 3
+                                Educacion
                             </button>
                             <button
-                                onClick={() => handleOptionClick('/pagina4')}
+                                onClick={() => handleOptionClick('../family')}
                                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-500 hover:text-white"
                             >
-                                Opción 4
+                                Familiar
                             </button>
                             <button
                                 onClick={() => handleOptionClick('/pagina5')}
                                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-500 hover:text-white"
                             >
-                                Opción 5
+                                Condiciones de salud
                             </button>
                             <button
                                 onClick={() => handleOptionClick('/pagina6')}
                                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-500 hover:text-white"
                             >
-                                Opción 6
+                                Solicitudes
                             </button>
                         </div>
                     </div>
@@ -95,17 +94,17 @@ export default function working_information() {
             </div>
 
             <div className="lg:bg-blue-500 lg:p-3 lg:text-white lg:shadow-md lg:rounded-lg lg:mx-auto lg:mt-5 ">
-                <ul className="lg:flex lg:space-x-10 grid hidden">
-                    <li><a href="#">Informacion laboral</a></li>
-                    <li><a href="./../account">Informacion Personal</a></li>
-                    <li><a href="#">Educacion</a></li>
-                    <li><a href="./../family">Familiar</a></li>
+                <ul className="lg:flex lg:space-x-10 grid hidden font-normal">
+                    <li><a href="../eyelashes/working_information" className='font-bold underline'>Informacion laboral</a></li>
+                    <li><a href="../account">Informacion Personal</a></li>
+                    <li><a href="../education/education" >Educacion</a></li>
+                    <li><a href="../family">Familiar</a></li>
                     <li><a href="#">Condicion de salud</a></li>
                     <li><a href="#">Solicitudes</a></li>
                 </ul>
             </div>
 
-            <div className="bg-white rounded-lg shadow-md mt-10 p-5 ml-5 mr-5 "> {/* Added padding */}
+            <div className="bg-white rounded-lg shadow-md mt-10 p-5 ml-5 mr-5 "> 
                 <span className="text-3xl font-bold text-gray-500">Informacion Laboral</span>
 
                 <div className="mt-5">
@@ -152,24 +151,24 @@ export default function working_information() {
                             <div>
                                 <label>Auxilio de alquiler computador personal para el trabajo <span className=' text-blue-500 '>*</span>{' '}</label>
                                 <div className="flex space-x-2">
-                                    <span>Si</span><input type="radio" id="Si" name="" value="Si" />
-                                    <span>No</span><input type="radio" id="No" name="" value="No" />
+                                    <span>Si</span><input type="radio" id="Si" name="alqPc" value="Si" />
+                                    <span>No</span><input type="radio" id="No" name="alqPc" value="No" />
                                 </div>
                             </div>
                             <hr className="lg:hidden" />
                             <div>
                                 <label>Auxilio de conectividad <span className=' text-blue-500 '>*</span>{' '}</label>
                                 <div className="flex space-x-2">
-                                    <span>Si</span><input type="radio" id="Si" name="" value="Si" />
-                                    <span>No</span><input type="radio" id="No" name="" value="No" />
+                                    <span>Si</span><input type="radio" id="Si" name="auxilioCo" value="Si" />
+                                    <span>No</span><input type="radio" id="No" name="auxilioCo" value="No" />
                                 </div>
                             </div>
                             <div>
                                 <label htmlFor="">Afiliacion a poliza de salud corporativa <span className=' text-blue-500 '>*</span>{' '}</label>
                                 <div className="flex space-x-2">
-                                    <span>Si</span><input type="radio" id="Si" name="" value="Si" />
-                                    <span>No</span><input type="radio" id="No" name="" value="No" />
-                                    <span>Na</span><input type="radio" id="Na" name="" value="Na" />
+                                    <span>Si</span><input type="radio" id="Si" name="afisalud" value="Si" />
+                                    <span>No</span><input type="radio" id="No" name="afisalud" value="No" />
+                                    <span>Na</span><input type="radio" id="Na" name="afisalud" value="Na" />
                                 </div>
                             </div>
 
@@ -180,8 +179,8 @@ export default function working_information() {
                             <div>
                                 <label htmlFor="maquinasHerramientas">Maquinas y herramientas</label>
                                 <div className="flex space-x-2">
-                                    <span>Si</span><input type="radio" id="Si" name="" value="Si"  onClick={toggleMaquinasHerramientas} />
-                                    <span>No</span><input type="radio" id="No" name="" value="No" />
+                                    <span>Si</span><input type="radio" id="Si" name="Maquinas" value="Si" onClick={toggleMaquinasHerramientas} />
+                                    <span>No</span><input type="radio" id="No" name="Maquinas" value="No" />
                                 </div>
                             </div>
                             <div>
@@ -214,8 +213,8 @@ export default function working_information() {
                             <div>
                                 <label htmlFor="epp">Elementos de protección personal</label>
                                 <div className="flex space-x-2">
-                                    <span>Si</span><input type="radio" id="Si" name="" value="Si" onClick={toggleElementosProteccion} />
-                                    <span>No</span><input type="radio" id="No" name="" value="No" />
+                                    <span>Si</span><input type="radio" id="Si" name="elementosPp" value="Si" onClick={toggleElementosProteccion} />
+                                    <span>No</span><input type="radio" id="No" name="elementosPp" value="No" />
                                 </div>
                             </div>
                             {mostrarElementosProteccion && (

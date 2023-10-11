@@ -37,11 +37,11 @@ export default function Hitos() {
         <link rel='icon' href='/public/img/icons/favicon.ico' />
       </Head>
 
-      <div className='grid justify-center mt-5'>
-        <h1 className='text-3xl text-gray-400'>HITOS LABORALES</h1>
-      </div>
 
-      <div className='mt-10 font-bold'>
+      <div className='mt-10 font-bold bg-white rounded-lg shadow-md p-5 ml-5 mr-5 '>
+        <div className='grid justify-center mt-5'>
+          <h1 className='text-3xl text-gray-400'>HITOS LABORALES</h1>
+        </div>
         <form action='' className='grid md:grid-cols-2 gap-4'>
           <div className='col-span-1'>
             <span className='text-3xl text-gray-400'>Que?</span>
@@ -53,7 +53,7 @@ export default function Hitos() {
 
               <input
                 type='text'
-                className=' w-11/12 p-2 border-2 border-black rounded focus:outline-none focus:border-blue-500 lg:w-full'
+                className=' w-11/12 p-2 border border-black rounded focus:outline-none focus:border-blue-500 lg:w-full'
                 placeholder='Ej. IBM, Ecopetrol, Hermanos Rodriguez'
                 required
                 onChange={checkFormValidity}
@@ -68,7 +68,7 @@ export default function Hitos() {
               <select
                 name=''
                 id=''
-                className='w-11/12 p-2 border-2 border-black rounded focus:outline-none focus:border-blue-500 lg:w-full'
+                className='w-11/12 p-2 border border-black rounded focus:outline-none focus:border-blue-500 lg:w-full'
                 required
                 onChange={checkFormValidity}
               >
@@ -87,14 +87,13 @@ export default function Hitos() {
             <div className='mt-3'>
               <label htmlFor='' className=' mb-1'>
                 Descripcion
-              </label>{' '}
-              <span className='text-gray-400'>Opcional</span>
+              </label>{' '}              <span className='text-gray-400'>Opcional</span>
               <textarea
                 name=''
                 id=''
                 cols='30'
                 rows='5'
-                className='w-11/12 p-2 border-2 border-black rounded focus:outline-none focus:border-blue-500 lg:w-full'
+                className='w-11/12 p-2 border border-black rounded focus:outline-none focus:border-blue-500 lg:w-full'
               ></textarea>
             </div>
 
@@ -102,14 +101,13 @@ export default function Hitos() {
               <label htmlFor='' className='block mb-1'>
                 Logros <span className=' text-blue-500 '>*</span>{' '}
               </label>
-
               <textarea
                 name=''
                 id=''
                 cols='30'
                 rows='5'
                 placeholder='¿Cuáles fueron tus principales logros en este cargo?'
-                className='w-11/12 p-2 border-2 border-black rounded focus:outline-none focus:border-blue-500 lg:w-full'
+                className='w-11/12 p-2 border border-black rounded focus:outline-none focus:border-blue-500 lg:w-full'
                 required
                 onChange={checkFormValidity}
               ></textarea>
@@ -124,12 +122,11 @@ export default function Hitos() {
 
               <input
                 type='text'
-                className='w-11/12 p-2 border-2 border-black rounded focus:outline-none focus:border-blue-500 lg:w-full'
+                className='w-11/12 p-2 border border-black rounded focus:outline-none focus:border-blue-500 lg:w-full'
                 placeholder='Ej. Jefe de Cartera, Auxiliar de planta, etc...'
                 required
                 onChange={checkFormValidity}
-              />
-            </div>
+              />            </div>
 
             <div className='mt-3'>
               <label htmlFor='' className='block mb-1'>
@@ -143,7 +140,7 @@ export default function Hitos() {
                 cols='30'
                 rows='5'
                 placeholder='¿Cuáles eran tus funciones y responsabilidades principales para este cargo?'
-                className='w-11/12 p-2 border-2 border-black rounded focus:outline-none focus:border-blue-500 lg:w-full'
+                className='w-11/12 p-2 borderborder-black rounded focus:outline-none focus:border-blue-500 lg:w-full'
                 required
                 onChange={checkFormValidity}
               ></textarea>
@@ -158,7 +155,7 @@ export default function Hitos() {
             <div className=''>
               <input
                 type='checkbox'
-                className='m-2 form-checkbox text-bluegdm border-2 rounded focus:outline-none focus:border-blue-500 h-4 w-4'
+                className='m-2 form-checkbox tet-bluegdm border rounded focus:outline-none focus:border-blue-500 h-4 w-4'
                 onChange={() => {
                   setEmpleoActual(!empleoActual);
 
@@ -177,8 +174,7 @@ export default function Hitos() {
               </label>
 
               <input
-                type='date'
-                className='w-11/12 p-2 border-2 border-black rounded focus:outline-none focus:border-blue-500 lg:w-full'
+                type='date' className='w-11/12 p-2 border border-black rounded focus:outline-none focus:border-blue-500 lg:w-full'
                 required
                 onChange={checkFormValidity}
               />
@@ -192,8 +188,7 @@ export default function Hitos() {
               </label>
 
               <input
-                type='date'
-                className='w-11/12 p-2 border-2 border-black rounded focus:outline-none focus:border-blue-500 lg:w-full'
+                type='date' className='w-11/12 p-2 border border-black rounded focus:outline-none focus:border-blue-500 lg:w-full'
               />
             </div>
           </div>
@@ -211,9 +206,8 @@ export default function Hitos() {
               <select
                 name=''
                 id=''
-                className='w-11/12 p-2 border-2 border-black rounded focus:outline-none focus:border-blue-500 lg:w-full'
-                required
-                onChange={checkFormValidity}
+                className='w-11/12 p-2 border border-black rounded focus:outline-none focus:border-blue-500 lg:w-full'
+                required onChange={checkFormValidity}
               >
                 <option value=''>Seleccione una opcion</option>
 
@@ -227,8 +221,7 @@ export default function Hitos() {
           </div>
 
           <div className='flex justify-center items-center mt-5'>
-            <button
-              type='submit'
+            <button type='submit'
               className={`button ${formIsValid ? '' : 'button__disabled'}`}
               disabled={!formIsValid}
             >

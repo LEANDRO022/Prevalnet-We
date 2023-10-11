@@ -6,7 +6,8 @@ import InputText from '@components/atoms/Inputs/InputText';
 import InputPhone from '@components/atoms/Inputs/InputPhone';
 import InputNumber from '@components/atoms/Inputs/InputNumber';
 
-export const numPersonasCargo = [
+import { useRouter } from 'next/router';
+export const personasCargo = [
   { value: '1', label: '1' },
   { value: '2', label: '2' },
 ];
@@ -55,12 +56,19 @@ export default function Family() {
     ]);
   };
 
-  const removeFamilyMember = indexToRemove => {
+  const removeFamilyMember = (indexToRemove) => {
     if (familyInfo.length > 1) {
       const newFamilyInfo = [...familyInfo];
       newFamilyInfo.splice(indexToRemove, 1);
       setFamilyInfo(newFamilyInfo);
     }
+  };
+  const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
+
+  const handleOptionClick = (path) => {
+    router.push(path);
+    setIsOpen(false);
   };
 
   const [personasCargo, setPersonasCargo] = useState(null);
@@ -78,9 +86,9 @@ export default function Family() {
         <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
           <InputSelectForm
             text='# de personas a cargo económicamente'
-            opts={numPersonasCargo}
+            opts={personasCargo}
             value={personasCargo}
-            onChange={selected => setPersonasCargo(selected)}
+            onChange={(selected) => setPersonasCargo(selected)}
           />
         </div>
         <hr className='my-6 border-t border-gray-300' />
