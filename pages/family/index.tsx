@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
+import Head from 'next/head';
+import Button from '@components/atoms/Buttons/Button';
 import InputSelectForm from '@components/atoms/Inputs/InputSelectForm';
 import InputText from '@components/atoms/Inputs/InputText';
 import InputPhone from '@components/atoms/Inputs/InputPhone';
-import Head from 'next/head';
-import Button from '@components/atoms/Buttons/Button';
 import InputNumber from '@components/atoms/Inputs/InputNumber';
 
 export const numPersonasCargo = [
@@ -36,6 +36,7 @@ export default function Family() {
       documentType: '',
       identityDocument: '',
       livesWithYou: false,
+      uploadedFiles: [],
     },
   ]);
 
@@ -49,6 +50,7 @@ export default function Family() {
         documentType: '',
         identityDocument: '',
         livesWithYou: false,
+        uploadedFiles: [],
       },
     ]);
   };
@@ -62,8 +64,6 @@ export default function Family() {
   };
 
   const [personasCargo, setPersonasCargo] = useState(null);
-  const [parentesco, setParentesco] = useState(null);
-  const [typeDocumento, setTypeDocumento] = useState(null);
 
   return (
     <>
@@ -71,7 +71,7 @@ export default function Family() {
         <title>Mi Cuenta</title>
         <link rel='icon' href='/img/Favicon.png' />
       </Head>
-      <div className='container mx-auto mt-8 p-8 max-w-screen-lg rounded-lg shadow-md'>
+      <div className='bg-white container mx-auto mt-8 p-8 max-w-screen-lg rounded-lg shadow-md'>
         <div className='text-gray-700 text-3xl font-semibold text-center mb-10'>
           Información Familiar
         </div>
@@ -90,14 +90,14 @@ export default function Family() {
           </span>
           <div className='grid md:grid-cols-2 gap-4'>
             {familyInfo.map((member, index) => (
-              <div key={index} className='space-y-4 shadow-md p-6'>
+              <div key={index} className='bg-gray-100 p-4 rounded-lg'>
                 <p className='text-xl font-semibold mb-2'>
                   Miembro Familiar {index + 1}
                 </p>
-                <div className='mb-5 flex items-center'>
-                  <span className='text-gray-700 text-sm font-bold'>
+                <div className='mb-4 flex items-center'>
+                  <label className='text-gray-700 text-sm font-bold'>
                     Marque si esta persona vive con usted
-                  </span>
+                  </label>
                   <input
                     type='checkbox'
                     name={`livesWithYou_${index}`}
@@ -124,7 +124,7 @@ export default function Family() {
                   />
                 </div>
 
-                <div className='text-center pt-2'>
+                <div className='mt- flex justify-center'>
                   {index > 0 && (
                     <Button
                       type='button'
@@ -137,7 +137,7 @@ export default function Family() {
               </div>
             ))}
           </div>
-          <div className='mt-5 text-center md:text-left'>
+          <div className='mt-4 text-center md:text-left'>
             <Button
               type='button'
               onClick={addFamilyMember}
@@ -148,7 +148,7 @@ export default function Family() {
         </div>
         <div className='mt-8'>
           <hr className='my-6 border-t border-gray-300' />
-          <span className='block text-gray-700 text-sm font-bold mb-5'>
+          <span className='block text-gray-700 text-sm font-bold mb-4'>
             Por favor registre un contacto personal o familiar con el que nos
             podamos comunicar en caso de emergencia
           </span>
@@ -167,7 +167,7 @@ export default function Family() {
             />
           </div>
         </div>
-        <div className='mt-10 flex justify-center'>
+        <div className='mt-8 flex justify-center'>
           <Button text='Guardar' type='button' priority='primary' />
         </div>
       </div>
