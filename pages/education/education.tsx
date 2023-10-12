@@ -110,7 +110,7 @@ export default function working_information() {
                                 </select>
                             </div>
                             <div className="">
-                                <label className="block text-gray-700 font-bold ">Nombre de la institución educativa<span className=' text-blue-500 '>*</span>{' '}</label>
+                                <label className="block text-gray-700 font-bold" >Nombre de la institución educativa<span className=' text-blue-500 '>*</span>{' '}</label>
                                 <input type="text" id="institucion" name="institucion" required className="border border-black p-2 w-full rounded" />
                             </div>
 

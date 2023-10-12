@@ -5,7 +5,7 @@ import { MdOutlineWorkOutline } from 'react-icons/md';
 
 function Cesantias() {
   return (
-    <div className='container mx-auto mt-8 p-8'>
+    <div className='container mx-auto mt-8 p-8 grid justify-center'>
       <Tabs activePage='cesantias' />
       <div className='bg-gray-100 container mx-auto mt-6 p-8 rounded-lg shadow-md'>
         <div>
