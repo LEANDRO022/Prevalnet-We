@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 
 import Button from '@components/atoms/Buttons/Button';
 import { FaPlus } from 'react-icons/fa';
+import { TbBellQuestion } from 'react-icons/tb';
 
 function Tabs({ activePage }) {
   const [activeTab, setActiveTab] = useState(activePage);
 
-  const handleTabClick = tabName => {
+  const handleTabClick = (tabName) => {
     setActiveTab(tabName);
   };
 
@@ -32,14 +33,22 @@ function Tabs({ activePage }) {
         >
           Mis Solicitudes
         </a>
-        <div>
+        <div className='flex items-center mt-4'>
+          <a
+            className='flex items-center mx-6 text-colorCyan'
+            href='/solicitudes'
+          >
+            <TbBellQuestion className='text-lg mr-2' />
+            Ver mis solicitudes
+          </a>
+
           <Button type='button' priority='primary' text='Nueva Solicitud'>
             <FaPlus className='mr-2' />
           </Button>
         </div>
       </div>
       <ul className='flex flex-wrap -mb-px'>
-        {tabItems.map(tab => (
+        {tabItems.map((tab) => (
           <li key={tab.id} className='mr-2'>
             <a
               href={`/solicitudes/${tab.id}`}
