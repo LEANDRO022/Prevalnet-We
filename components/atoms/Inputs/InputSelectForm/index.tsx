@@ -4,6 +4,7 @@ import Select from 'react-select';
 // Props tipadas del componente
 interface InputSelectFormProps {
   text?: string;
+  name?: string;
   placeholder?: string;
   value?: any;
   opts: any[];
