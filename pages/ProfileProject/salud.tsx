@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import Bnav from '@components/organisms/Bnav';
 
 
 export default function Healthy_Conditions() {
 
-    const [hacerEjercicio, setHacerEjercicio] = useState('NO'); 
-    const [Tratamiento, setTratamiento] = useState('NO'); 
-    const [Enfermedad, SetEnfermedad] = useState('NO'); 
+    const [hacerEjercicio, setHacerEjercicio] = useState('NO');
+    const [Tratamiento, setTratamiento] = useState('NO');
+    const [Enfermedad, SetEnfermedad] = useState('NO');
 
     const [isOpen, setIsOpen] = useState(false);
     const router = useRouter();
@@ -89,16 +90,10 @@ export default function Healthy_Conditions() {
                 )}
             </div>
 
-            <div className="lg:bg-blue-500 lg:p-3 lg:text-white lg:shadow-md lg:rounded-lg lg:mx-auto lg:mt-5  ">
-                <ul className="lg:flex lg:space-x-10 grid hidden font-normal">
-                    <li><a href="../eyelashes/working_information" className='font-bold underline'>Informacion laboral</a></li>
-                    <li><a href="../account">Informacion Personal</a></li>
-                    <li><a href="../education/education" >Educacion</a></li>
-                    <li><a href="../family">Familiar</a></li>
-                    <li><a href="#">Condicion de salud</a></li>
-                    <li><a href="#">Solicitudes</a></li>
-                </ul>
+            <div className='grid justify-center'>
+                <Bnav activePage='salud' />
             </div>
+
 
             <div className="bg-white rounded-lg shadow-md mt-10 p-5 ml-5 mr-5 lg:w-11/12 lg:ml-16">
                 <span className='text-3xl font-bold text-gray-500'>Condiciones de Salud</span>
@@ -129,10 +124,10 @@ export default function Healthy_Conditions() {
                                 <label htmlFor="ejercicio">¿Haces ejercicio? <span className=' text-blue-500 '>*</span>{' '}</label>
                                 <div className='flex space-x-2'>
                                     <span>SI</span><input type="radio" id="ejercicio" name="ejercicio" value={'SI'} checked={hacerEjercicio === 'SI'} // Establece el estado en 'SI' cuando se selecciona
-                                        onChange={() => setHacerEjercicio('SI')} 
+                                        onChange={() => setHacerEjercicio('SI')}
                                     />
                                     <span>NO</span><input type="radio" id="ejercicio" name="ejercicio" value={'NO'} checked={hacerEjercicio === 'NO'} // Establece el estado en 'NO' cuando se selecciona
-                                        onChange={() => setHacerEjercicio('NO')} 
+                                        onChange={() => setHacerEjercicio('NO')}
                                     />
                                 </div>
                             </div>
@@ -216,33 +211,33 @@ export default function Healthy_Conditions() {
                                 <div className='flex space-x-2'>
                                     <span>SI</span><input type="radio" id="Enfermedad" name="Enfermedad" value={'SI'} checked={hacerEjercicio === 'SI'} // Establece el estado en 'SI' cuando se selecciona
                                         onChange={() => SetEnfermedad('SI')} // Cambia el estado a 'SI' cuando se seleccion
-                                         />
-                                    <span>NO</span><input type="radio" id="Enfermedad" name="Enfermedad" value={'NO'}  checked={hacerEjercicio === 'NO'} // Establece el estado en 'NO' cuando se selecciona
+                                    />
+                                    <span>NO</span><input type="radio" id="Enfermedad" name="Enfermedad" value={'NO'} checked={hacerEjercicio === 'NO'} // Establece el estado en 'NO' cuando se selecciona
                                         onChange={() => SetEnfermedad('NO')} // Cambia el estado a 'NO' cuando se selecciona
-                                        />
+                                    />
                                 </div>
                             </div>
                             {Enfermedad === 'SI' && (
-                            <div>
-                                <label htmlFor="">Que enfermedad</label>
-                                <select name="" id="" className="w-full p-2 border border-black rounded-lg">
-                                    <option value="">Seleccione una...</option>
-                                    <option value="Cancer">Cancer</option>
-                                    <option value="Hipertencio_arterial">Hipertencio arterial</option>
-                                    <option value="Colesterol_alto">Colesterol alto</option>
-                                    <option value="diabetes">diabetes</option>
-                                    <option value="Enfermedades_cardiovasculares">Enfermedades cardiovasculares</option>
-                                    <option value="Ansiedad/Depresion">Ansiedad/Depresion</option>
-                                    <option value="otro">otro</option>
-                                </select>
-                            </div>
+                                <div>
+                                    <label htmlFor="">Que enfermedad</label>
+                                    <select name="" id="" className="w-full p-2 border border-black rounded-lg">
+                                        <option value="">Seleccione una...</option>
+                                        <option value="Cancer">Cancer</option>
+                                        <option value="Hipertencio_arterial">Hipertencio arterial</option>
+                                        <option value="Colesterol_alto">Colesterol alto</option>
+                                        <option value="diabetes">diabetes</option>
+                                        <option value="Enfermedades_cardiovasculares">Enfermedades cardiovasculares</option>
+                                        <option value="Ansiedad/Depresion">Ansiedad/Depresion</option>
+                                        <option value="otro">otro</option>
+                                    </select>
+                                </div>
                             )}
                             {Enfermedad === 'SI' && (
-                            <div>
-                                <label htmlFor="">Cual?</label>
-                                <input type="text" className="w-full p-2 border border-black rounded-lg" />
-                            </div>
-                            )} 
+                                <div>
+                                    <label htmlFor="">Cual?</label>
+                                    <input type="text" className="w-full p-2 border border-black rounded-lg" />
+                                </div>
+                            )}
                         </div>
 
 

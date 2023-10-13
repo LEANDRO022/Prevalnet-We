@@ -5,6 +5,7 @@ import InputSelectForm from '@components/atoms/Inputs/InputSelectForm';
 import InputText from '@components/atoms/Inputs/InputText';
 import InputPhone from '@components/atoms/Inputs/InputPhone';
 import InputNumber from '@components/atoms/Inputs/InputNumber';
+import Bnav from '@components/organisms/Bnav';
 
 import { useRouter } from 'next/router';
 export const personasCargo = [
@@ -79,6 +80,11 @@ export default function Family() {
         <title>Mi Cuenta</title>
         <link rel='icon' href='/img/Favicon.png' />
       </Head>
+
+      <div className="flex ">
+        <Bnav activePage='familia' />
+      </div>
+
       <div className='bg-white container mx-auto mt-8 p-8 max-w-screen-lg rounded-lg shadow-md'>
         <div className='text-gray-700 text-3xl font-semibold text-center mb-10'>
           Información Familiar

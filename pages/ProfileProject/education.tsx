@@ -2,6 +2,7 @@ import Head from "next/head";
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import Bnav from '@components/organisms/Bnav';
 
 export default function working_information() {
     const [isOpen, setIsOpen] = useState(false);
@@ -82,16 +83,8 @@ export default function working_information() {
                     </div>
                 )}
             </div>
-            <div className="lg:bg-blue-500 lg:p-3 lg:text-white lg:shadow-md lg:rounded-lg lg:mx-auto lg:mt-5 flex justify-center font-normal">
-                <ul className="lg:flex lg:space-x-10 grid hidden">
-                    <li><a href="../eyelashes/working_information">Informacion laboral</a></li>
-                    <li><a href="../account">Informacion Personal</a></li>
-                    <li><a href="../education/education" className='font-bold underline'>Educacion</a></li>
-                    <li><a href="../family">Familiar</a></li>
-                    <li><a href="#">Condicion de salud</a></li>
-                    <li><a href="#">Solicitudes</a></li>
-                </ul>
-            </div>
+            <Bnav activePage='education'/>
+            
 
             <div>
                 <div className="bg-white rounded-lg shadow-md mt-10 p-5 ml-5 mr-5 ">
