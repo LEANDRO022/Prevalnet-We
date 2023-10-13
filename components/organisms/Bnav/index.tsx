@@ -13,36 +13,33 @@ function Bnav({ activePage }) {
 
   const tabItems = [
     { id: 'infoLaboral', label: 'Informacion Laboral' },
-    { id: 'education', label: 'Educacion' },
-    { id: 'familia', label: 'Familiar' },
-    { id: 'salud', label: 'Condciones de salud' },
-    
+    { id: 'education', label: 'Educación' },
+    { id: 'familia', label: 'Informacion Familiar' },
+    { id: 'salud', label: 'Condiciones de salud' },
   ];
 
   return (
     <div className='text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700'>
       <div className='mb-3 flex flex-wrap -m-px justify-between'>
         <a
-          className={`text-3xl font-medium inline-block pb-4 border-b-4 ${
-            activeTab === 'ProfileProject'
-              ? 'text-colorCyan border-colorCyan'
-              : 'border-transparent'
-          } hover:text-colorCyan hover:border-colorCyan`}
-          href='/ProfileProject'
+          className={`text-3xl font-medium inline-block pb-4 `} //border-b-4
+          // ${
+          //   activeTab === 'ProfileProject'
+          //     ? 'text-colorCyan border-colorCyan'
+          //     : 'border-transparent'
+          // } hover:text-colorCyan hover:border-colorCyan`}
+          // href='/ProfileProject'
         >
-          Gestion de perfil
+          Gestión de perfil
         </a>
-        <div className='flex items-center mt-4'>
+        {/* <div className='flex items-center mt-4'>
           <a
             className='flex items-center mx-6 text-colorCyan'
             href='/ProfileProject'
           >
             <TbBellQuestion className='text-lg mr-2' />
-            
           </a>
-
-          
-        </div>
+        </div> */}
       </div>
       <ul className='flex flex-wrap -mb-px'>
         {tabItems.map((tab) => (

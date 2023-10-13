@@ -1,5 +1,4 @@
 import Button from '@components/atoms/Buttons/Button';
-import InputDate from '@components/atoms/Inputs/InputDate';
 import InputNumber from '@components/atoms/Inputs/InputNumber';
 import InputSelectForm from '@components/atoms/Inputs/InputSelectForm';
 import InputText from '@components/atoms/Inputs/InputText';
@@ -34,7 +33,6 @@ function Cesantias() {
             <p className='text-xl font-semibold'>Solicitud Cesantías</p>
           </div>
           <div className='mt-8 grid gap-6'>
-            {/* <InputDate label='Fecha' isDisabled/> */}
             <InputText label='Nombre completo' name='' required />
             <InputText label='Documento de Identidad' name='' required />
             <InputSelectForm

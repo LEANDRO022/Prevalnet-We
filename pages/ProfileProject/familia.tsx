@@ -75,20 +75,21 @@ export default function Family() {
   const [personasCargo, setPersonasCargo] = useState(null);
 
   return (
-    <>
+    <div className='container mx-auto mt-8 grid'>
       <Head>
-        <title>Mi Cuenta</title>
+        <title>Informacion familiar</title>
         <link rel='icon' href='/img/Favicon.png' />
       </Head>
 
-      <div className="flex ">
+      <div className='container mx-auto max-w-screen-lg'>
         <Bnav activePage='familia' />
       </div>
 
       <div className='bg-white container mx-auto mt-8 p-8 max-w-screen-lg rounded-lg shadow-md'>
-        <div className='text-gray-700 text-3xl font-semibold text-center mb-10'>
+        <div className='text-gray-700 text-3xl font-semibold md:text-left text-center mb-10'>
           Información Familiar
         </div>
+
         <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
           <InputSelectForm
             text='# de personas a cargo económicamente'
@@ -138,7 +139,7 @@ export default function Family() {
                   />
                 </div>
 
-                <div className='mt- flex justify-center'>
+                <div className='mt-5 flex justify-center'>
                   {index > 0 && (
                     <Button
                       type='button'
@@ -185,6 +186,6 @@ export default function Family() {
           <Button text='Guardar' type='button' priority='primary' />
         </div>
       </div>
-    </>
+    </div>
   );
 }

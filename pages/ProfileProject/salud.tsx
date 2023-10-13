@@ -3,31 +3,26 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Bnav from '@components/organisms/Bnav';
 
-
 export default function Healthy_Conditions() {
+  const [hacerEjercicio, setHacerEjercicio] = useState('NO');
+  const [Tratamiento, setTratamiento] = useState('NO');
+  const [Enfermedad, SetEnfermedad] = useState('NO');
 
-    const [hacerEjercicio, setHacerEjercicio] = useState('NO');
-    const [Tratamiento, setTratamiento] = useState('NO');
-    const [Enfermedad, SetEnfermedad] = useState('NO');
+  const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
 
-    const [isOpen, setIsOpen] = useState(false);
-    const router = useRouter();
+  const handleOptionClick = (path) => {
+    router.push(path);
+    setIsOpen(false);
+  };
 
-    const handleOptionClick = (path) => {
-        router.push(path);
-        setIsOpen(false);
-    };
-
-
-    return (
-        <div className="grid justify-center font-bold items-center">
-            <div>
-                <Head>
-                    <title>Condiciones de Salud</title>
-                    <link rel='icon' href='/public/img/icons/favicon.ico' />
-                </Head>
-            </div>
-            <div className="relative inline-block text-left">
+  return (
+    <div className='container mx-auto mt-8 grid justify-center'>
+      <Head>
+        <title>Condiciones de Salud</title>
+        <link rel='icon' href='/public/img/icons/favicon.ico' />
+      </Head>
+      {/* <div className="relative inline-block text-left">
                 <div className="lg:hidden">
                     <button
                         onClick={() => setIsOpen(!isOpen)}
@@ -88,188 +83,291 @@ export default function Healthy_Conditions() {
                         </div>
                     </div>
                 )}
+            </div> */}
+
+      <Bnav activePage='salud' />
+
+      <div className='bg-white container mx-auto mt-8 p-8 max-w-screen-lg rounded-lg shadow-md'>
+        <span className='text-3xl font-bold text-gray-500'>
+          Condiciones de Salud
+        </span>
+        <div className='mt-5'>
+          <form action=''>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+              <div>
+                <label htmlFor='Peso'>
+                  Peso<span className=' text-blue-500 '>*</span>{' '}
+                </label>
+                <input
+                  type='number'
+                  id='Peso'
+                  step='0.01'
+                  className='w-full p-2 border border-black rounded-lg'
+                />
+              </div>
+              <div>
+                <label htmlFor='Estatura'>
+                  Estatura<span className=' text-blue-500 '>*</span>{' '}
+                </label>
+                <input
+                  type='number'
+                  id='Estatura'
+                  step='0.01'
+                  className='w-full p-2 border border-black rounded-lg'
+                />
+              </div>
+
+              <div>
+                <label htmlFor='Grupo_Sanguineo'>
+                  Grupo Sanguineo<span className=' text-blue-500 '>*</span>{' '}
+                </label>
+                <input
+                  type='text'
+                  id='Grupo_Sanguineo'
+                  className='w-full p-2 border border-black rounded-lg'
+                />
+              </div>
             </div>
-
-            <div className='grid justify-center'>
-                <Bnav activePage='salud' />
-            </div>
-
-
-            <div className="bg-white rounded-lg shadow-md mt-10 p-5 ml-5 mr-5 lg:w-11/12 lg:ml-16">
-                <span className='text-3xl font-bold text-gray-500'>Condiciones de Salud</span>
-                <div className='mt-5'>
-                    <form action="">
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                            <div>
-                                <label htmlFor="Peso">Peso<span className=' text-blue-500 '>*</span>{' '}</label>
-                                <input type="number" id="Peso" step="0.01" className="w-full p-2 border border-black rounded-lg" />
-                            </div>
-                            <div>
-                                <label htmlFor="Estatura">Estatura<span className=' text-blue-500 '>*</span>{' '}</label>
-                                <input type="number" id="Estatura" step="0.01" className="w-full p-2 border border-black rounded-lg" />
-                            </div>
-
-                            <div>
-                                <label htmlFor="Grupo_Sanguineo">Grupo Sanguineo<span className=' text-blue-500 '>*</span>{' '}</label>
-                                <input type="text" id="Grupo_Sanguineo" className="w-full p-2 border border-black rounded-lg" />
-                            </div>
-
-                        </div>
-
-                        <hr className='mt-5' />
-                        <span className='mt-5 text-3xl font-bold text-gray-500'>Habitos</span>
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:mt-5">
-                            <div className=''>
-                                <label htmlFor="ejercicio">¿Haces ejercicio? <span className=' text-blue-500 '>*</span>{' '}</label>
-                                <div className='flex space-x-2'>
-                                    <span>SI</span><input type="radio" id="ejercicio" name="ejercicio" value={'SI'} checked={hacerEjercicio === 'SI'} // Establece el estado en 'SI' cuando se selecciona
-                                        onChange={() => setHacerEjercicio('SI')}
-                                    />
-                                    <span>NO</span><input type="radio" id="ejercicio" name="ejercicio" value={'NO'} checked={hacerEjercicio === 'NO'} // Establece el estado en 'NO' cuando se selecciona
-                                        onChange={() => setHacerEjercicio('NO')}
-                                    />
-                                </div>
-                            </div>
-                            {hacerEjercicio === 'SI' && (
-
-                                <div>
-                                    <label htmlFor="tipoEjercicio">Tipo de ejercicio:</label>
-                                    <input type="text" id="tipoEjercicio" name="tipoEjercicio" className="w-full p-2 border border-black rounded-lg" />
-                                </div>
-
-                            )}
-                            {hacerEjercicio === 'SI' && (
-                                <div>
-                                    <label htmlFor="frecuencia">Frecuencia a la semana:</label>
-                                    <input type="number" id="frecuencia" name="frecuencia" min="1" max="7" className="w-full p-2 border border-black rounded-lg" />
-                                </div>
-                            )}
-                        </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:mt-5">
-                            <div>
-                                <label htmlFor="">Con que frecuencia fuma</label>
-                                <select name="" id="" className="w-full p-2 border border-black rounded-lg">
-                                    <option value="">Selecciona una...</option>
-                                    <option value="no_fuma">No fuma</option>
-                                    <option value="Ocasionalmente">Ocasionalmente</option>
-                                    <option value="Semanalmente">Semanalmente</option>
-                                    <option value="Diariamente">Diariamente</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label htmlFor="">Con que frecuencia consume alcohol</label>
-                                <select name="" id="" className="w-full p-2 border border-black rounded-lg">
-                                    <option value="">Selecciona una...</option>
-                                    <option value="no_consume">No consume</option>
-                                    <option value="Ocasionalmente">Ocasionalmente</option>
-                                    <option value="cada_15_dias">Cada 15 dias</option>
-                                    <option value="Semanalmente">Semanalmente</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <hr className='mt-5' />
-                        <span className='mt-5 text-3xl font-bold text-gray-500'>Control de examenes medicos ocupacionales</span> <br />
-                        <span>Examen medico de ingreso</span>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
-                            <div className=''>
-                                <label htmlFor="">Fecha</label>
-                                <input type="date" className="w-full p-2 border border-black rounded-lg" />
-                            </div>
-                            <div>
-                                <label htmlFor="">Proveedor</label>
-                                <input type="text" className="w-full p-2 border border-black rounded-lg" />
-                            </div>
-                            <div>
-                                <label htmlFor="">Cargar concepto de actitud</label>
-                                <input type="file" className="w-full p-2 border border-black rounded-lg" />
-                            </div>
-                        </div>
-
-                        <hr className='mt-5' />
-
-                        <span>Examen medico periodico</span>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
-                            <div className=''>
-                                <label htmlFor="">Fecha</label>
-                                <input type="date" className="w-full p-2 border border-black rounded-lg" />
-                            </div>
-                            <div>
-                                <label htmlFor="">Proveedor</label>
-                                <input type="text" className="w-full p-2 border border-black rounded-lg" />
-                            </div>
-                            <div>
-                                <label htmlFor="">Cargar concepto de actitud</label>
-                                <input type="file" className="w-full p-2 border border-black rounded-lg" />
-                            </div>
-                        </div>
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:mt-5">
-                            <div className=''>
-                                <label htmlFor="ejercicio">¿actualmente padece alguna enfermedad? <span className=' text-blue-500 '>*</span>{' '}</label>
-                                <div className='flex space-x-2'>
-                                    <span>SI</span><input type="radio" id="Enfermedad" name="Enfermedad" value={'SI'} checked={hacerEjercicio === 'SI'} // Establece el estado en 'SI' cuando se selecciona
-                                        onChange={() => SetEnfermedad('SI')} // Cambia el estado a 'SI' cuando se seleccion
-                                    />
-                                    <span>NO</span><input type="radio" id="Enfermedad" name="Enfermedad" value={'NO'} checked={hacerEjercicio === 'NO'} // Establece el estado en 'NO' cuando se selecciona
-                                        onChange={() => SetEnfermedad('NO')} // Cambia el estado a 'NO' cuando se selecciona
-                                    />
-                                </div>
-                            </div>
-                            {Enfermedad === 'SI' && (
-                                <div>
-                                    <label htmlFor="">Que enfermedad</label>
-                                    <select name="" id="" className="w-full p-2 border border-black rounded-lg">
-                                        <option value="">Seleccione una...</option>
-                                        <option value="Cancer">Cancer</option>
-                                        <option value="Hipertencio_arterial">Hipertencio arterial</option>
-                                        <option value="Colesterol_alto">Colesterol alto</option>
-                                        <option value="diabetes">diabetes</option>
-                                        <option value="Enfermedades_cardiovasculares">Enfermedades cardiovasculares</option>
-                                        <option value="Ansiedad/Depresion">Ansiedad/Depresion</option>
-                                        <option value="otro">otro</option>
-                                    </select>
-                                </div>
-                            )}
-                            {Enfermedad === 'SI' && (
-                                <div>
-                                    <label htmlFor="">Cual?</label>
-                                    <input type="text" className="w-full p-2 border border-black rounded-lg" />
-                                </div>
-                            )}
-                        </div>
-
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:mt-5">
-                            <div>
-                                <label htmlFor="">Se encuentra actualmente en algun tratamiento medico</label>
-                                <div className='flex space-x-2'>
-                                    <span>SI</span><input type="radio" id="Tratamiento" name="Tratamiento" value={'SI'} checked={Tratamiento === 'SI'} // Establece el estado en 'SI' cuando se selecciona
-                                        onChange={() => setTratamiento('SI')} // Cambia el estado a 'SI' cuando se seleccion
-                                    />
-                                    <span>NO</span><input type="radio" id="Tratamiento" name="Tratamiento" value={'NO'} checked={Tratamiento === 'NO'} // Establece el estado en 'NO' cuando se selecciona
-                                        onChange={() => setTratamiento('NO')} // Cambia el estado a 'NO' cuando se selecciona
-                                    />
-                                </div>
-                            </div>
-                            {Tratamiento === 'SI' && (
-                                <div>
-                                    <label htmlFor="">Para que enfermedad</label>
-                                    <input type="text" className="w-full p-2 border border-black rounded-lg" />
-                                </div>
-                            )}
-                        </div>
-
-
-                    </form>
+            <hr className='mt-5' />
+            <span className='mt-5 text-3xl font-bold text-gray-500'>
+              Habitos
+            </span>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:mt-5'>
+              <div className=''>
+                <label htmlFor='ejercicio'>
+                  ¿Haces ejercicio? <span className=' text-blue-500 '>*</span>{' '}
+                </label>
+                <div className='flex space-x-2'>
+                  <span>SI</span>
+                  <input
+                    type='radio'
+                    id='ejercicio'
+                    name='ejercicio'
+                    value={'SI'}
+                    checked={hacerEjercicio === 'SI'} // Establece el estado en 'SI' cuando se selecciona
+                    onChange={() => setHacerEjercicio('SI')}
+                  />
+                  <span>NO</span>
+                  <input
+                    type='radio'
+                    id='ejercicio'
+                    name='ejercicio'
+                    value={'NO'}
+                    checked={hacerEjercicio === 'NO'} // Establece el estado en 'NO' cuando se selecciona
+                    onChange={() => setHacerEjercicio('NO')}
+                  />
                 </div>
+              </div>
+              {hacerEjercicio === 'SI' && (
+                <div>
+                  <label htmlFor='tipoEjercicio'>Tipo de ejercicio:</label>
+                  <input
+                    type='text'
+                    id='tipoEjercicio'
+                    name='tipoEjercicio'
+                    className='w-full p-2 border border-black rounded-lg'
+                  />
+                </div>
+              )}
+              {hacerEjercicio === 'SI' && (
+                <div>
+                  <label htmlFor='frecuencia'>Frecuencia a la semana:</label>
+                  <input
+                    type='number'
+                    id='frecuencia'
+                    name='frecuencia'
+                    min='1'
+                    max='7'
+                    className='w-full p-2 border border-black rounded-lg'
+                  />
+                </div>
+              )}
             </div>
-
-
-
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:mt-5'>
+              <div>
+                <label htmlFor=''>Con que frecuencia fuma</label>
+                <select
+                  name=''
+                  id=''
+                  className='w-full p-2 border border-black rounded-lg'
+                >
+                  <option value=''>Selecciona una...</option>
+                  <option value='no_fuma'>No fuma</option>
+                  <option value='Ocasionalmente'>Ocasionalmente</option>
+                  <option value='Semanalmente'>Semanalmente</option>
+                  <option value='Diariamente'>Diariamente</option>
+                </select>
+              </div>
+              <div>
+                <label htmlFor=''>Con que frecuencia consume alcohol</label>
+                <select
+                  name=''
+                  id=''
+                  className='w-full p-2 border border-black rounded-lg'
+                >
+                  <option value=''>Selecciona una...</option>
+                  <option value='no_consume'>No consume</option>
+                  <option value='Ocasionalmente'>Ocasionalmente</option>
+                  <option value='cada_15_dias'>Cada 15 dias</option>
+                  <option value='Semanalmente'>Semanalmente</option>
+                </select>
+              </div>
+            </div>
+            <hr className='mt-5' />
+            <span className='mt-5 text-3xl font-bold text-gray-500'>
+              Control de examenes medicos ocupacionales
+            </span>{' '}
+            <br />
+            <span>Examen medico de ingreso</span>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 '>
+              <div className=''>
+                <label htmlFor=''>Fecha</label>
+                <input
+                  type='date'
+                  className='w-full p-2 border border-black rounded-lg'
+                />
+              </div>
+              <div>
+                <label htmlFor=''>Proveedor</label>
+                <input
+                  type='text'
+                  className='w-full p-2 border border-black rounded-lg'
+                />
+              </div>
+              <div>
+                <label htmlFor=''>Cargar concepto de actitud</label>
+                <input
+                  type='file'
+                  className='w-full p-2 border border-black rounded-lg'
+                />
+              </div>
+            </div>
+            <hr className='mt-5' />
+            <span>Examen medico periodico</span>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 '>
+              <div className=''>
+                <label htmlFor=''>Fecha</label>
+                <input
+                  type='date'
+                  className='w-full p-2 border border-black rounded-lg'
+                />
+              </div>
+              <div>
+                <label htmlFor=''>Proveedor</label>
+                <input
+                  type='text'
+                  className='w-full p-2 border border-black rounded-lg'
+                />
+              </div>
+              <div>
+                <label htmlFor=''>Cargar concepto de actitud</label>
+                <input
+                  type='file'
+                  className='w-full p-2 border border-black rounded-lg'
+                />
+              </div>
+            </div>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:mt-5'>
+              <div className=''>
+                <label htmlFor='ejercicio'>
+                  ¿actualmente padece alguna enfermedad?{' '}
+                  <span className=' text-blue-500 '>*</span>{' '}
+                </label>
+                <div className='flex space-x-2'>
+                  <span>SI</span>
+                  <input
+                    type='radio'
+                    id='Enfermedad'
+                    name='Enfermedad'
+                    value={'SI'}
+                    checked={hacerEjercicio === 'SI'} // Establece el estado en 'SI' cuando se selecciona
+                    onChange={() => SetEnfermedad('SI')} // Cambia el estado a 'SI' cuando se seleccion
+                  />
+                  <span>NO</span>
+                  <input
+                    type='radio'
+                    id='Enfermedad'
+                    name='Enfermedad'
+                    value={'NO'}
+                    checked={hacerEjercicio === 'NO'} // Establece el estado en 'NO' cuando se selecciona
+                    onChange={() => SetEnfermedad('NO')} // Cambia el estado a 'NO' cuando se selecciona
+                  />
+                </div>
+              </div>
+              {Enfermedad === 'SI' && (
+                <div>
+                  <label htmlFor=''>Que enfermedad</label>
+                  <select
+                    name=''
+                    id=''
+                    className='w-full p-2 border border-black rounded-lg'
+                  >
+                    <option value=''>Seleccione una...</option>
+                    <option value='Cancer'>Cancer</option>
+                    <option value='Hipertencio_arterial'>
+                      Hipertencio arterial
+                    </option>
+                    <option value='Colesterol_alto'>Colesterol alto</option>
+                    <option value='diabetes'>diabetes</option>
+                    <option value='Enfermedades_cardiovasculares'>
+                      Enfermedades cardiovasculares
+                    </option>
+                    <option value='Ansiedad/Depresion'>
+                      Ansiedad/Depresion
+                    </option>
+                    <option value='otro'>otro</option>
+                  </select>
+                </div>
+              )}
+              {Enfermedad === 'SI' && (
+                <div>
+                  <label htmlFor=''>Cual?</label>
+                  <input
+                    type='text'
+                    className='w-full p-2 border border-black rounded-lg'
+                  />
+                </div>
+              )}
+            </div>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:mt-5'>
+              <div>
+                <label htmlFor=''>
+                  Se encuentra actualmente en algun tratamiento medico
+                </label>
+                <div className='flex space-x-2'>
+                  <span>SI</span>
+                  <input
+                    type='radio'
+                    id='Tratamiento'
+                    name='Tratamiento'
+                    value={'SI'}
+                    checked={Tratamiento === 'SI'} // Establece el estado en 'SI' cuando se selecciona
+                    onChange={() => setTratamiento('SI')} // Cambia el estado a 'SI' cuando se seleccion
+                  />
+                  <span>NO</span>
+                  <input
+                    type='radio'
+                    id='Tratamiento'
+                    name='Tratamiento'
+                    value={'NO'}
+                    checked={Tratamiento === 'NO'} // Establece el estado en 'NO' cuando se selecciona
+                    onChange={() => setTratamiento('NO')} // Cambia el estado a 'NO' cuando se selecciona
+                  />
+                </div>
+              </div>
+              {Tratamiento === 'SI' && (
+                <div>
+                  <label htmlFor=''>Para que enfermedad</label>
+                  <input
+                    type='text'
+                    className='w-full p-2 border border-black rounded-lg'
+                  />
+                </div>
+              )}
+            </div>
+          </form>
         </div>
-
-    )
-
+      </div>
+    </div>
+  );
 }

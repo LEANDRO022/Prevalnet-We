@@ -1,8 +1,6 @@
 import Button from '@components/atoms/Buttons/Button';
 import InputDate from '@components/atoms/Inputs/InputDate';
-import InputNumber from '@components/atoms/Inputs/InputNumber';
 import InputSelectForm from '@components/atoms/Inputs/InputSelectForm';
-import InputText from '@components/atoms/Inputs/InputText';
 import Tabs from '@components/organisms/Tabs';
 import { useState } from 'react';
 import { MdFamilyRestroom } from 'react-icons/md';
@@ -19,7 +17,7 @@ function Familia() {
 
 
   return (
-    <div className='container mx-auto mt-8 p-8'>
+    <div className='container mx-auto mt-8 p-8 grid justify-center'>
       <Tabs activePage='familia' />
       <div className='bg-gray-100 container mx-auto mt-6 p-8 rounded-lg shadow-md'>
         <div>
@@ -27,7 +25,7 @@ function Familia() {
             <MdFamilyRestroom className='text-7xl text-gray-600 bg-white mr-4 p-2' />
             <p className='text-xl font-semibold'>Solicitud Dia de la familia</p>
           </div>
-          <div className='mt-8 grid  gap-6 grid-cols-2'>
+          <div className='mt-8 grid gap-6 grid-cols-2'>
             <InputSelectForm
               text='Aprobadores'
               placeholder='Selecciona aquí los destinatarios'

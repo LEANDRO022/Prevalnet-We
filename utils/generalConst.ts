@@ -51,6 +51,13 @@ export const itemsMenuSidebar = [
     title: 'Mis Solicitudes',
     path: '/solicitudes',
   },
+  {
+    id: 5,
+    iconCategory: 'tdesign',
+    iconName: 'user-setting',
+    title: 'Gestion de perfil',
+    path: '/ProfileProject/infoLaboral',
+  },
   // {
   //   id: 5,
   //   iconCategory: 'akar-icons',
