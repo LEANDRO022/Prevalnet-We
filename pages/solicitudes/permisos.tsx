@@ -5,6 +5,7 @@ import InputText from '@components/atoms/Inputs/InputText';
 import RadioButton from '@components/atoms/Radio';
 import TextArea from '@components/atoms/Textarea';
 import Tabs from '@components/organisms/Tabs';
+import Head from 'next/head';
 import { ChangeEvent, useState } from 'react';
 import { TbLicense } from 'react-icons/tb';
 
@@ -31,6 +32,11 @@ function permisos() {
 
   return (
     <div className='container mx-auto mt-8 p-8 grid justify-center'>
+      <Head>
+        <title>Solicitar permiso especial</title>
+        <link rel='icon' href='/img/Favicon.png' />
+      </Head>
+      
       <Tabs activePage='permisos' />
       <div className='bg-gray-100 container mx-auto mt-6 p-8 rounded-lg shadow-md'>
         <div>

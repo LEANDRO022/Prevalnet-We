@@ -3,6 +3,7 @@ import InputNumber from '@components/atoms/Inputs/InputNumber';
 import InputSelectForm from '@components/atoms/Inputs/InputSelectForm';
 import InputText from '@components/atoms/Inputs/InputText';
 import Tabs from '@components/organisms/Tabs';
+import Head from 'next/head';
 import { useState } from 'react';
 import { MdOutlineWorkOutline } from 'react-icons/md';
 
@@ -25,6 +26,11 @@ function Cesantias() {
 
   return (
     <div className='container mx-auto mt-8 p-8 grid justify-center'>
+      <Head>
+        <title>Solicitar cesantías</title>
+        <link rel='icon' href='/img/Favicon.png' />
+      </Head>
+
       <Tabs activePage='cesantias' />
       <div className='bg-gray-100 container mx-auto mt-6 p-8 rounded-lg shadow-md'>
         <div>
