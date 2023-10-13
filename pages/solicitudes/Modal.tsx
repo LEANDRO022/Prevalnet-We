@@ -48,7 +48,7 @@ const Modal = ({ isOpen, onClose, cardData }) => {
           </div>
         </div>
         <hr className='my-8' />
-        <div className='grid justify-start'>
+        <div className='grid justify-center sm:justify-start'>
           {cardData.status === 'Aprobado' && (
             <button className='bg-colorCyan text-white py-2 px-4 rounded-lg mt-2'>
               Descargar Certificado

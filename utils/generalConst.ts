@@ -9,13 +9,6 @@ export const itemsMenuSidebar = [
     title: 'Inicio',
     path: '/',
   },
-  // {
-  //   id: 2,
-  //   iconCategory: 'ph',
-  //   iconName: 'student',
-  //   title: 'Información Académica',
-  //   path: '/academy',
-  // },
   {
     id: 2,
     iconCategory: 'ph',
@@ -23,20 +16,6 @@ export const itemsMenuSidebar = [
     title: 'Certificados',
     path: '/experience',
   },
-  // {
-  //   id: 4,
-  //   iconCategory: 'ph',
-  //   iconName: 'read-cv-logo',
-  //   title: 'Experiencia Laboral',
-  //   path: '/hitos/create',
-  // },
-  // {
-  //   id: 5,
-  //   iconCategory: 'ph',
-  //   iconName: 'folder-user',
-  //   title: 'Hito Personal',
-  //   path: '/hitos/create_staff',
-  // },
   {
     id: 3,
     iconCategory: 'fluent',
@@ -58,55 +37,6 @@ export const itemsMenuSidebar = [
     title: 'Gestion de perfil',
     path: '/ProfileProject/infoLaboral',
   },
-  // {
-  //   id: 5,
-  //   iconCategory: 'akar-icons',
-  //   iconName: 'chat-approve',
-  //   title: 'Aprobaciones',
-  //   path: '/aprobaciones',
-  // },
-  // {
-  //   id: 2,
-  //   iconCategory: 'ph',
-  //   iconName: 'layout',
-  //   title: 'Projects',
-  //   path: '/admin/projects',
-  // },
-  // {
-  //   id: 3,
-  //   iconCategory: 'clarity',
-  //   iconName: 'favorite-line',
-  //   title: 'Favorites',
-  //   path: '/Favorites',
-  // },
-  // {
-  //   id: 4,
-  //   iconCategory: 'icon-park-outline',
-  //   iconName: 'doc-search-two',
-  //   title: 'Master Data',
-  //   path: '/admin',
-  // },
-  // {
-  //   id: 5,
-  //   iconCategory: 'carbon',
-  //   iconName: 'flow',
-  //   title: 'Workflows',
-  //   path: '/Workflows',
-  // },
-  // {
-  //   id: 6,
-  //   iconCategory: 'ph',
-  //   iconName: 'folder-user',
-  //   title: 'Corporate Documnents',
-  //   path: '/Corporate Documnents',
-  // },
-  // {
-  //   id: 7,
-  //   iconCategory: 'ph',
-  //   iconName: 'signature',
-  //   title: 'Signatures',
-  //   path: '/Maestro clientes',
-  // },
 ];
 export const itemsMenuSidebarMobile = [
   // {
@@ -147,37 +77,30 @@ export const itemsMenuSidebarMobile = [
   {
     id: 2,
     iconCategory: 'ph',
-    iconName: 'student',
-    title: 'Información Académica',
-    path: '/academy',
-  },
-  {
-    id: 3,
-    iconCategory: 'ph',
     iconName: 'certificate',
     title: 'Certificados',
     path: '/experience',
   },
   {
-    id: 4,
-    iconCategory: 'ph',
-    iconName: 'read-cv-logo',
-    title: 'Experiencia Laboral',
-    path: '/hitos/create',
-  },
-  {
-    id: 5,
-    iconCategory: 'ph',
-    iconName: 'folder-user',
-    title: 'Hito Personal',
-    path: '/hitos/create_staff',
-  },
-  {
-    id: 6,
+    id: 3,
     iconCategory: 'fluent',
     iconName: 'brain-circuit-20-regular',
     title: 'Mis Conocimientos',
     path: '/my_grade/grade',
+  },
+  {
+    id: 4,
+    iconCategory: 'material-symbols',
+    iconName: 'help-outline',
+    title: 'Mis Solicitudes',
+    path: '/solicitudes',
+  },
+  {
+    id: 5,
+    iconCategory: 'tdesign',
+    iconName: 'user-setting',
+    title: 'Gestion de perfil',
+    path: '/ProfileProject/infoLaboral',
   },
 ];
 export const itemsMenuFooterTab = [
