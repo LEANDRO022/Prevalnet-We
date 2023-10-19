@@ -9,7 +9,7 @@ const vacaciones = () => (
     <form action="" className='bg-gray-100 mt-5'>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
         <div className='flex items-center'>
-          <Icon icon="solar:glasses-bold" className='text-7xl' />
+          <Icon icon="solar:glasses-bold" className='text-7xl text-gray-600' />
           <p className='text-xl font-semibold'>Solicitud Vacaciones</p>
         </div>
         <div>{ }</div>

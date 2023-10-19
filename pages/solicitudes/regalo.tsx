@@ -13,7 +13,7 @@ const regalo = () => (
     <Tabs activePage='regalo' />
     <div className='bg-gray-100 container mx-auto mt-6 p-8 rounded-lg shadow-md'>
       <form action=''>
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-4 mt-5'>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-10 mt-5'>
           <div className='flex items-center gap-4'>
             <Icon icon='mdi:medal-outline' className='text-7xl text-gray-600' />
             <p className='text-xl font-semibold'>
@@ -22,7 +22,7 @@ const regalo = () => (
           </div>
           <div></div>
 
-          <div className='gap-4 lg:w-9/12'>
+          <div className='gap-4 '>
             <label htmlFor='' className='block font-bold'>
               Aprobadores<span className=' text-blue-500 '>*</span>
             </label>
@@ -33,7 +33,7 @@ const regalo = () => (
             />
           </div>
 
-          <div className='gap-4 lg:w-9/12'>
+          <div className='gap-4 '>
             <label htmlFor='' className='block font-bold'>
               Fecha<span className=' text-blue-500 '>*</span>
             </label>

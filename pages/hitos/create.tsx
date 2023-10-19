@@ -140,7 +140,7 @@ export default function Hitos() {
                 cols='30'
                 rows='5'
                 placeholder='¿Cuáles eran tus funciones y responsabilidades principales para este cargo?'
-                className='w-11/12 p-2 borderborder-black rounded focus:outline-none focus:border-blue-500 lg:w-full'
+                className='w-11/12 p-2 border border-black rounded focus:outline-none focus:border-blue-500 lg:w-full'
                 required
                 onChange={checkFormValidity}
               ></textarea>
@@ -218,6 +218,7 @@ export default function Hitos() {
                 ))}
               </select>
             </div>
+            <div></div>
           </div>
 
           <div className='flex justify-center items-center mt-5'>
