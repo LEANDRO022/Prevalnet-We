@@ -21,26 +21,9 @@ function Bnav({ activePage }) {
   return (
     <div className='text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700'>
       <div className='mb-3 flex flex-wrap -m-px justify-between'>
-        <a
-          className={`text-3xl font-medium inline-block pb-4 `} //border-b-4
-          // ${
-          //   activeTab === 'ProfileProject'
-          //     ? 'text-colorCyan border-colorCyan'
-          //     : 'border-transparent'
-          // } hover:text-colorCyan hover:border-colorCyan`}
-          // href='/ProfileProject'
-        >
-          Gestión de perfil
-        </a>
-        {/* <div className='flex items-center mt-4'>
-          <a
-            className='flex items-center mx-6 text-colorCyan'
-            href='/ProfileProject'
-          >
-            <TbBellQuestion className='text-lg mr-2' />
-          </a>
-        </div> */}
+        <a className={`text-3xl font-medium inline-block pb-4 `}>Gestión de perfil</a>       
       </div>
+      
       <ul className='flex flex-wrap -mb-px'>
         {tabItems.map((tab) => (
           <li key={tab.id} className='mr-2'>
