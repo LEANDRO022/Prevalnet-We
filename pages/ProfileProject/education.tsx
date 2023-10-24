@@ -44,56 +44,7 @@ export default function working_information() {
             </svg>
           </button>
         </div>
-
-        {isOpen && (
-          <div className='origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5'>
-            <div
-              className='py-1'
-              role='menu'
-              aria-orientation='vertical'
-              aria-labelledby='dropdown-button'
-            >
-              <button
-                onClick={() =>
-                  handleOptionClick('../eyelashes/working_information')
-                }
-                className='block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-500 hover:text-white'
-              >
-                Informacion Laboral
-              </button>
-              <button
-                onClick={() => handleOptionClick('../account')}
-                className='block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-500 hover:text-white'
-              >
-                Informacion personal
-              </button>
-              <button
-                onClick={() => handleOptionClick('../education/education')}
-                className='block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-500 hover:text-white'
-              >
-                Educacion
-              </button>
-              <button
-                onClick={() => handleOptionClick('../family')}
-                className='block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-500 hover:text-white'
-              >
-                Familiar
-              </button>
-              <button
-                onClick={() => handleOptionClick('/pagina5')}
-                className='block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-500 hover:text-white'
-              >
-                Condiciones de salud
-              </button>
-              <button
-                onClick={() => handleOptionClick('/pagina6')}
-                className='block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-500 hover:text-white'
-              >
-                Solicitudes
-              </button>
-            </div>
-          </div>
-        )}
+        
       </div>
 
       <Bnav activePage='education' />

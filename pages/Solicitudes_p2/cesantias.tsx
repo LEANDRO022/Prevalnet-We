@@ -1,40 +1,36 @@
+import NavLeft from '@components/organisms/NavLeft';
+import { Icon } from '@iconify/react';
 import Button from '@components/atoms/Buttons/Button';
-import InputNumber from '@components/atoms/Inputs/InputNumber';
-import InputSelectForm from '@components/atoms/Inputs/InputSelectForm';
-import InputText from '@components/atoms/Inputs/InputText';
-import Tabs from '@components/organisms/Tabs';
 import Head from 'next/head';
+import Modal from '@components/organisms/Modals/CesantiasModal/cesantias'
 import { useState } from 'react';
-import { MdOutlineWorkOutline } from 'react-icons/md';
-
-const optTipoDocumento = [
-  { value: 'Cedula de Ciudadanía', label: 'Cédula de Ciudadanía' },
-  { value: 'Cedula de Extranjería', label: 'Cédula de Extranjería' },
-  { value: 'Tarjeta de Identidad', label: 'Tarjeta de Identidad' },
-];
-
-const optFinalidad = [
-  { value: 'Compra de vivienda', label: 'Compra de vivienda' },
-  { value: 'Educación', label: 'Educación' },
-  { value: 'Desempleo involuntario', label: 'Desempleo involuntario' },
-  { value: 'Emergencias médicas', label: 'Emergencias médicas' },
-];
 
 function Cesantias() {
-  const [tipoDocumento, setTipoDocumento] = useState(null);
-  const [finalidad, setFinalidad] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
-  return (
-    <div className='container mx-auto mt-8 p-8 grid justify-center'>
-      <Head>
-        <title>Solicitar cesantías</title>
-        <link rel='icon' href='/img/Favicon.png' />
-      </Head>
+    const handleModalOpen = () => {
+        setIsModalOpen(true);
+    };
 
-      <Tabs activePage='cesantias' />
-      
-    </div>
-  );
-}
+    const handleModalClose = () => {
+        setIsModalOpen(false);
+    };
+    return (
+        <div className='container mx-auto mt-8 p-8 grid '>
+            <Head>
+                <title>Cesantias</title>
+                <link rel='icon' href='/img/Favicon.png' />
+            </Head>
+            <NavLeft activePage="cesantias" />
+
+            <div>
+                <div>
+                    <button onClick={handleModalOpen}>Abrir Modal</button>
+                    <Modal isOpen={isModalOpen} onClose={handleModalClose} />
+                </div>
+            </div>
+        </div>
+    )
+};
 
 export default Cesantias;

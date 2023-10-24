@@ -7,7 +7,7 @@ function NavLeft({ activePage }) {
         setActiveTab(tabName);
     };
     const tabItems = [
-        { id: 'cesantias', label: 'Cesantías' },
+        { id: 'cesantias', label: 'Cesantias' },
         { id: 'vacaciones', label: 'Vacaciones' },
         { id: 'familia', label: 'Día de la familia' },
         { id: 'regalo', label: 'Regalo medio día de cumpleaños' },
@@ -28,7 +28,7 @@ function NavLeft({ activePage }) {
                         {tabItems.map((tab) => (
                             <li key={tab.id} className='mr-2'>
                                 <a
-                                    href={`/ProfileProject/${tab.id}`}
+                                    href={`/Solicitudes_p2/${tab.id}`}
                                     className={`inline-block p-4 rounded-t-lg ${activeTab === tab.id
                                         ? 'text-colorCyan'
                                         : 'text-black' // Set your desired default text color when not active
