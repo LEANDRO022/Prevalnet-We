@@ -2,7 +2,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { useIsMobile } from 'context/sidebar';
-import { itemsMenuSidebar } from 'utils/generalConst';
+import { itemsMenuSidebar, adminItems } from 'utils/generalConst';
 import Imagen from '@components/atoms/Imagen';
 import Icon from '@components/atoms/Icon';
 import Text from '@components/atoms/Text';
@@ -10,6 +10,7 @@ import Text from '@components/atoms/Text';
 function Sidebar() {
   const { isMobile, expandSidebar, setExpandSidebar } = useIsMobile();
   const router = useRouter();
+  const isAdminRoute = router.asPath.startsWith('/admin');
   const isTheRouter = router.asPath;
 
   const handleMouseOver = () => {
@@ -59,58 +60,90 @@ function Sidebar() {
         </div>
         <div>
           <ul>
-            {itemsMenuSidebar?.map(item => (
-              <Link href={item?.path} key={item?.id}>
+            {isTheRouter === '/admin'
+              ? adminItems.map((item) => (
+                  <Link href={item?.path} key={item?.id}>
+                    <li className='my-4 flex h-10 items-center gap-x-3'>
+                      <span
+                        className={`flex items-center justify-center rounded-md p-2 ${
+                          isTheRouter === item?.path && expandSidebar === false
+                            ? 'bg-colorCyan'
+                            : 'bg-transparent'
+                        }`}
+                      >
+                        <Icon
+                          iconCategory={item?.iconCategory}
+                          iconName={item?.iconName}
+                        />
+                      </span>
+                      <span
+                        className={
+                          expandSidebar
+                            ? 'block w-60 animate-slide-right'
+                            : 'hidden'
+                        }
+                      >
+                        <Text text={item?.title} />
+                      </span>
+                    </li>
+                  </Link>
+                ))
+              : itemsMenuSidebar?.map((item) => (
+                  <Link href={item?.path} key={item?.id}>
+                    <li className='my-4 flex h-10 items-center gap-x-3'>
+                      <span
+                        className={`flex items-center justify-center rounded-md p-2 ${
+                          isTheRouter === item?.path && expandSidebar === false
+                            ? 'bg-colorCyan'
+                            : 'bg-transparent'
+                        }`}
+                      >
+                        <Icon
+                          iconCategory={item?.iconCategory}
+                          iconName={item?.iconName}
+                        />
+                      </span>
+                      <span
+                        className={
+                          expandSidebar
+                            ? 'block w-60 animate-slide-right'
+                            : 'hidden'
+                        }
+                      >
+                        <Text text={item?.title} />
+                      </span>
+                    </li>
+                  </Link>
+                ))}
+          </ul>
+        </div>
+        <div>
+          {isAdminRoute && (
+            <ul>
+              <Link href='/admin'>
                 <li className='my-4 flex h-10 items-center gap-x-3'>
                   <span
                     className={`flex items-center justify-center rounded-md p-2 ${
-                      isTheRouter === item?.path && expandSidebar === false
-                        ? 'bg-colorCyan'
+                      isTheRouter === 'Help' && expandSidebar === false
+                        ? 'colorCyan'
                         : 'bg-transparent'
                     }`}
                   >
-                    <Icon
-                      iconCategory={item?.iconCategory}
-                      iconName={item?.iconName}
-                    />
+                    <Icon iconCategory='eos-icons' iconName='admin-outlined' />
                   </span>
                   <span
                     className={
                       expandSidebar
-                        ? 'block w-60 animate-slide-right'
+                        ? 'block w-40 animate-slide-right'
                         : 'hidden'
                     }
                   >
-                    <Text text={item?.title} />
+                    <Text text='Administrador' />
                   </span>
                 </li>
               </Link>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <ul>
-            <Link href='/account'>
-              <li className='my-4 flex h-10 items-center gap-x-3'>
-                <span
-                  className={`flex items-center justify-center rounded-md p-2 ${
-                    isTheRouter === 'Help' && expandSidebar === false
-                      ? 'colorCyan'
-                      : 'bg-transparent'
-                  }`}
-                >
-                  <Icon iconCategory='ph' iconName='gear' />
-                </span>
-                <span
-                  className={
-                    expandSidebar ? 'block w-40 animate-slide-right' : 'hidden'
-                  }
-                >
-                  <Text text='Configuración' />
-                </span>
-              </li>
-            </Link>
-          </ul>
+            </ul>
+          )}
         </div>
       </div>
     </div>

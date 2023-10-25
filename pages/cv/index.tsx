@@ -1,33 +1,27 @@
 import React from 'react';
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from 'react-vertical-timeline-component';
+import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-
 import { Icon } from '@iconify/react';
-import { FaEdit } from 'react-icons/fa';
 
 const timelineData = [
   {
-    date: '2023 - present',
+    date: '2023 - Presente',
     title: 'Inició en PrevalentWare',
     type: 'Aprendiz SENA',
     icon: 'fa-solid:suitcase',
   },
   {
-    date: '2022 - present',
+    date: '2022 - Presente',
     title: 'Inicio en Sena',
-    type: 'Tecnologo en Analisis y Desarrollo en Sistemas de Información',
+    type: 'Tecnólogo en Análisis y Desarrollo en Sistemas de Información',
     icon: 'fa-solid:university',
   },
   {
     date: '2020 - 2021',
     title: 'Finalizó en Liceo Antioqueño',
-    type: 'Tecnica Profesional de Sistemas en Programacion y Mantenimiento de Computadores',
+    type: 'Técnica Profesional de Sistemas en Programación y Mantenimiento de Computadores',
     icon: 'fa-solid:check-double',
   },
-  
   {
     date: '2017 - 2018',
     title: 'Inició en PrevalentWare',
@@ -37,50 +31,38 @@ const timelineData = [
   {
     date: '2017 - 2017',
     title: 'Inicio en Sena',
-    type: 'Tecnologo en Analisis y Desarrollo en Sistemas de Información',
+    type: 'Tecnólogo en Análisis y Desarrollo en Sistemas de Información',
     icon: 'fa-solid:university',
   },
 ];
 
-// timelineData.sort((a, b) => {
-//   const dateA = new Date(a.date.split(' - ')[0]);
-//   const dateB = new Date(b.date.split(' - ')[0]);
-//   return dateB - dateA;
-// });
-
 const iconColors = {
-  'fa-solid:university': '#facc15',
+  'fa-solid:university': '#3498db',
   'fa-solid:suitcase': '#4ade80',
   'fa-solid:check-double': '#ef4444',
 };
 
 const TimeLineVertical = () => {
   return (
-    <div className='py-16'>
-      <VerticalTimeline>
+    <div className="py-10">
+      <VerticalTimeline layout="1-column">
         {timelineData.map((item, index) => (
           <VerticalTimelineElement
             key={index}
-            className='vertical-timeline-element--work relative'
-            contentStyle={{
-              background: index % 2 === 0 ? '#3498db' : '#fff',
-              boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.3)',
-              color: index % 2 === 0 ? '#fff' : '#333',
-              fontFamily: 'Arial, sans-serif',
-            }}
-            contentArrowStyle={{ borderRight: '12px solid #3498db' }}
-            date={<span style={{ color: '#333' }}>{item.date}</span>}
+            className="vertical-timeline-element p-4 bg-white border border-gray-200 rounded-lg shadow-md"
+            contentArrowStyle={{ borderRight: '7px solid #3498db' }}
+            date={item.date}
             iconStyle={{
               background: iconColors[item.icon],
               color: '#fff',
             }}
-            icon={<Icon icon={item.icon} />}
+            icon={<Icon icon={item.icon} className="text-3xl" />}
           >
-            <h3 className='vertical-timeline-element-title'>{item.title}</h3>
-            <p>{item.type}</p>
-            <div className='absolute lg:top-2 right-2'>
-              <button className='font-normal'>
-                <Icon icon='tabler:edit' width={25} className='m-2' />
+            <h3 className="text-xl font-semibold text-blue-500">{item.title}</h3>
+            <p className="text-gray-700 text-lg">{item.type}</p>
+            <div className="absolute top-3 right-3">
+              <button className="p-2 bg-blue-500 text-white rounded-full">
+                <Icon icon="tabler:edit" width={18} />
               </button>
             </div>
           </VerticalTimelineElement>

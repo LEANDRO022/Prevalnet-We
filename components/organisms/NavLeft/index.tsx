@@ -28,7 +28,7 @@ function NavLeft({ activePage }) {
                         {tabItems.map((tab) => (
                             <li key={tab.id} className='mr-2'>
                                 <a
-                                    href={`/Solicitudes_p2/${tab.id}`}
+                                    href={`/admin/aprobaciones/${tab.id}`}
                                     className={`inline-block p-4 rounded-t-lg ${activeTab === tab.id
                                         ? 'text-colorCyan'
                                         : 'text-black' // Set your desired default text color when not active

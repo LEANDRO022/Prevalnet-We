@@ -31,26 +31,26 @@ function AccountMenu({
         {/** Seccion de opciones --lista ordenada */}
         <div>
           <ul>
-            <li>
+            {/* <li>
               <Link href='/'>
                 <Text
                   text='Privacy Policy'
                   extraClassNames='account_menu__text_link'
                 />
               </Link>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <Link href='admin/experience'>
                 <Text
                   text='Admin Certificate'
                   extraClassNames='account_menu__text_link'
                 />
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link href='/account'>
                 <Text
-                  text='Account Settings'
+                  text='Configuración'
                   extraClassNames='account_menu__text_link'
                 />
               </Link>
@@ -58,7 +58,7 @@ function AccountMenu({
             <li>
               <button type='button'>
                 <Text
-                  text='Log Out'
+                  text='Cerrar sesión'
                   extraClassNames='account_menu__text_link'
                 />
               </button>

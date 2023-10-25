@@ -11,14 +11,12 @@ import Text from '@components/atoms/Text';
 
 function MasterData() {
   return (
-    <div className='page'>
-      {/** Rejilla para los items */}
+    <div className='page p-10'>
       <div className='page__card_master'>
         {dataCardMaster?.map(item => (
           <div key={item?.id}>
             <Link href={item?.path}>
               <Card extraClassNames='card__master card_type'>
-                {/** Children */}
                 <Title text={item?.title} extraClassNames='card__title' />
                 <Text
                   text={item?.description}

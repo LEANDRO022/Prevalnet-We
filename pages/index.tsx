@@ -11,6 +11,11 @@ function Index() {
         <title>PrevalentWe</title>
       </Head>
 
+      <div className='p-4'>
+        <Link href='./admin'>
+          <span>Vista admin</span>
+        </Link>
+      </div>
       <div className='grid justify-center items-center my-10'>
         <div className='flex justify-center'>
           <h1 className='text-4xl  text-gray-700'>Mi CV</h1>
